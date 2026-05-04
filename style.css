@@ -2,6 +2,5 @@ body{
   height:100%;
   margin:0;
   padding: 0;
-  background-image: linear-gradient( to top right,#1F1F1F,#434343,#D3D3D3);
-                                    
+  background: linear-gradient(135deg, #1f1f1f, #434343, #d3d3d3);                     
 }
