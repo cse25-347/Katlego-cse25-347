@@ -1,2 +1,7 @@
-body{ background-color: (31, 31, 31)(67, 67, 67)(211, 211, 211)
+body{
+  height:100%;
+  margin:0;
+  padding: 0;
+  background-image: linear-gradient( to top right, pink,yellow,green);
+                                    
 }
