@@ -1,6 +1,76 @@
 body{
+  font-family: Arial, sans-serif;
+  color: #333;
+  background: (black); 
+  
   height:100%;
   margin:0;
   padding: 0;
-  background: (black);                     
+
+                      
 }
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+header h1 {
+  margin: 0;
+}
+nav {
+  background-color: #555;
+  overflow: hidden;
+}
+nav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+nav a:hover {
+    text-decoration: underline;
+  background-color: #777;
+}
+main {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+main img {
+  max-width: 100%;
+  height: auto;
+  display:block
+  margin: 20px auto;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+p {
+  font-size: ;  
+  font-family: poppins;
+  line-height: 1.6;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+img {
+    border:5px solid #333;
+  border-radius: 8px;
+}
+main a[href^=mailto]{
+  color: #ff5722;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
