@@ -9,7 +9,7 @@ CHANGE WEBSITE COLORS HERE
 
 /* MAIN WEBSITE BACKGROUND */
 body {
-    background-color: #D3D3D3;
+    background: linear-gradient(135deg, #1f1f1f, #434343, #d3d3d3);
 }
 
 /* SIGN UP & CATALOGUE PAGES */
