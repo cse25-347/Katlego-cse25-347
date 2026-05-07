@@ -1,1380 +1,212 @@
+<!-- =========================
+FILE: index.html
+MAIN HOMEPAGE
+========================= -->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PZ PERFORMANCE</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Bebas+Neue&family=Montserrat:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet"/>
+    <title>PZ Performance</title>
 
-  <style>
-    /* ============================================================
-       CSS VARIABLES — Change colors/fonts here globally
-    ============================================================ */
-    :root {
-      --bg-main: #D3D3D3;          /* ← MAIN background color */
-      --bg-accent: #CF2025;        /* ← RED accent (Sign Up & Parts Catalogue) */
-      --bg-dark: #111111;
-      --bg-card: #c4c4c4;
-      --text-dark: #111111;
-      --text-light: #ffffff;
-      --text-muted: #555555;
-      --border: #b0b0b0;
+    <!-- GOOGLE FONTS -->
+    <!-- HEADERS = Bebas Neue -->
+    <!-- TITLES = Montserrat -->
+    <!-- PARAGRAPHS = Poppins -->
 
-      --font-header: 'Bebas Neue', sans-serif;    /* ← Headers font */
-      --font-title: 'Montserrat', sans-serif;     /* ← Titles font */
-      --font-body: 'Poppins', sans-serif;         /* ← Paragraphs font */
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-      --radius: 4px;
-      --transition: 0.25s ease;
-      --shadow: 0 4px 20px rgba(0,0,0,0.15);
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-    /* ============================================================
-       RESET & BASE
-    ============================================================ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background-color: var(--bg-main); /* ← Main page background */
-      font-family: var(--font-body);
-      color: var(--text-dark);
-      overflow-x: hidden;
-    }
-
-    img { display: block; width: 100%; object-fit: cover; }
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; }
-
-    /* ============================================================
-       NAVIGATION
-    ============================================================ */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      background: var(--bg-dark);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 48px;
-      height: 68px;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.4);
-    }
-
-    .nav-logo {
-      font-family: var(--font-header);
-      font-size: 2rem;
-      color: var(--text-light);
-      letter-spacing: 2px;
-    }
-
-    .nav-logo span {
-      color: var(--bg-accent); /* ← Logo accent color */
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      font-family: var(--font-title);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #cccccc;
-      transition: color var(--transition);
-    }
-
-    .nav-links a:hover { color: var(--bg-accent); }
-
-    .nav-cta {
-      background: var(--bg-accent); /* ← Nav CTA button background */
-      color: var(--text-light) !important;
-      padding: 10px 22px;
-      border-radius: var(--radius);
-      font-weight: 700 !important;
-      transition: opacity var(--transition) !important;
-    }
-
-    .nav-cta:hover { opacity: 0.85; color: var(--text-light) !important; }
-
-    /* Hamburger (mobile) */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-    }
-    .hamburger span {
-      display: block; width: 26px; height: 2px;
-      background: var(--text-light);
-      transition: var(--transition);
-    }
-
-    /* ============================================================
-       HERO SECTION
-    ============================================================ */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background: var(--bg-dark);
-    }
-
-    /* ── HERO IMAGE: replace url(...) with your actual image path ── */
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('images/hero-car.jpg'); /* ← ADD HERO IMAGE HERE */
-      background-size: cover;
-      background-position: center;
-      opacity: 0.35;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, rgba(0,0,0,0.85) 50%, transparent);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 120px 80px 80px;
-      max-width: 680px;
-      animation: fadeUp 0.9s ease both;
-    }
-
-    .hero-eyebrow {
-      font-family: var(--font-title);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--bg-accent);
-      margin-bottom: 16px;
-    }
-
-    .hero h1 {
-      font-family: var(--font-header);
-      font-size: clamp(4rem, 9vw, 8rem);
-      line-height: 0.95;
-      color: var(--text-light);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-
-    .hero h1 em {
-      font-style: normal;
-      color: var(--bg-accent); /* ← Hero headline accent */
-    }
-
-    .hero p {
-      font-family: var(--font-body);
-      font-size: 1rem;
-      font-weight: 300;
-      color: #cccccc;
-      line-height: 1.7;
-      margin-bottom: 40px;
-      max-width: 480px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      background: var(--bg-accent); /* ← Primary button color */
-      color: var(--text-light);
-      font-family: var(--font-title);
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 16px 36px;
-      border-radius: var(--radius);
-      border: none;
-      cursor: pointer;
-      transition: transform var(--transition), opacity var(--transition);
-    }
-    .btn-primary:hover { opacity: 0.88; transform: translateY(-2px); }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--text-light);
-      font-family: var(--font-title);
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 16px 36px;
-      border-radius: var(--radius);
-      border: 2px solid rgba(255,255,255,0.5);
-      cursor: pointer;
-      transition: border-color var(--transition), transform var(--transition);
-    }
-    .btn-outline:hover { border-color: var(--text-light); transform: translateY(-2px); }
-
-    .hero-stats {
-      position: absolute;
-      bottom: 48px;
-      right: 80px;
-      display: flex;
-      gap: 48px;
-      z-index: 2;
-      animation: fadeUp 1s 0.3s ease both;
-    }
-
-    .stat {
-      text-align: center;
-      border-left: 3px solid var(--bg-accent);
-      padding-left: 16px;
-    }
-
-    .stat-number {
-      font-family: var(--font-header);
-      font-size: 2.8rem;
-      color: var(--text-light);
-      line-height: 1;
-    }
-
-    .stat-label {
-      font-family: var(--font-body);
-      font-size: 0.7rem;
-      color: #aaaaaa;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-top: 4px;
-    }
-
-    /* ============================================================
-       SECTION SHARED STYLES
-    ============================================================ */
-    section { padding: 96px 80px; }
-
-    .section-label {
-      font-family: var(--font-title);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--bg-accent); /* ← Section eyebrow label color */
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      font-family: var(--font-header);
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--text-dark);
-      line-height: 1;
-      margin-bottom: 16px;
-    }
-
-    .section-subtitle {
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      max-width: 540px;
-      line-height: 1.7;
-      margin-bottom: 56px;
-    }
-
-    /* ============================================================
-       SERVICES SECTION
-    ============================================================ */
-    .services {
-      background: var(--bg-main); /* ← Services section background */
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 2px;
-    }
-
-    .service-card {
-      background: var(--bg-dark);
-      color: var(--text-light);
-      padding: 40px 32px;
-      position: relative;
-      overflow: hidden;
-      transition: transform var(--transition);
-      cursor: pointer;
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 0; height: 3px;
-      background: var(--bg-accent); /* ← Service card hover underline */
-      transition: width 0.4s ease;
-    }
-
-    .service-card:hover::before { width: 100%; }
-    .service-card:hover { transform: translateY(-4px); }
-
-    /* ── SERVICE CARD IMAGE: replace background-image url per card ── */
-    .service-card-img {
-      height: 180px;
-      background-color: #2a2a2a;
-      background-image: url('images/service-placeholder.jpg'); /* ← ADD SERVICE IMAGE */
-      background-size: cover;
-      background-position: center;
-      margin: -40px -32px 28px;
-      opacity: 0.6;
-      transition: opacity var(--transition);
-    }
-    .service-card:hover .service-card-img { opacity: 0.85; }
-
-    .service-icon {
-      font-size: 2rem;
-      margin-bottom: 16px;
-    }
-
-    .service-name {
-      font-family: var(--font-title);
-      font-size: 1rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-    }
-
-    .service-desc {
-      font-family: var(--font-body);
-      font-size: 0.82rem;
-      color: #aaaaaa;
-      line-height: 1.65;
-      margin-bottom: 20px;
-    }
-
-    .service-meta {
-      display: flex;
-      gap: 20px;
-      font-family: var(--font-title);
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-
-    .service-price { color: var(--bg-accent); }
-    .service-duration { color: #777; }
-
-    .service-arrow {
-      position: absolute;
-      top: 32px; right: 32px;
-      font-size: 1.2rem;
-      color: #444;
-      transition: color var(--transition), transform var(--transition);
-    }
-    .service-card:hover .service-arrow { color: var(--bg-accent); transform: translate(4px, -4px); }
-
-    /* ============================================================
-       FEATURED PRODUCTS SECTION
-    ============================================================ */
-    .products {
-      background: #c8c8c8; /* ← Products section background (slight variation) */
-    }
-
-    .products-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 48px;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .products-header .section-subtitle { margin-bottom: 0; }
-
-    .view-all {
-      font-family: var(--font-title);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--bg-accent); /* ← "View All" link color */
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      white-space: nowrap;
-      transition: gap var(--transition);
-    }
-    .view-all:hover { gap: 14px; }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 20px;
-    }
-
-    .product-card {
-      background: var(--text-light);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: transform var(--transition), box-shadow var(--transition);
-      cursor: pointer;
-    }
-    .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow);
-    }
-
-    /* ── PRODUCT IMAGE: replace background-image url per card ── */
-    .product-img {
-      height: 200px;
-      background-color: #e8e8e8;
-      background-image: url('images/product-placeholder.jpg'); /* ← ADD PRODUCT IMAGE */
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-
-    .product-badge {
-      position: absolute;
-      top: 12px; left: 12px;
-      background: var(--bg-accent); /* ← Product badge background */
-      color: var(--text-light);
-      font-family: var(--font-title);
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 2px;
-    }
-
-    .product-info {
-      padding: 20px;
-    }
-
-    .product-category {
-      font-family: var(--font-title);
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
-    .product-name {
-      font-family: var(--font-title);
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 8px;
-    }
-
-    .product-compat {
-      font-family: var(--font-body);
-      font-size: 0.75rem;
-      color: #888;
-      margin-bottom: 14px;
-    }
-
-    .product-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .product-price {
-      font-family: var(--font-header);
-      font-size: 1.6rem;
-      color: var(--bg-accent); /* ← Product price color */
-    }
-
-    .add-to-cart {
-      background: var(--bg-dark); /* ← Add to cart button */
-      color: var(--text-light);
-      font-family: var(--font-title);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border: none;
-      padding: 10px 16px;
-      border-radius: var(--radius);
-      cursor: pointer;
-      transition: background var(--transition);
-    }
-    .add-to-cart:hover { background: var(--bg-accent); }
-
-    /* ============================================================
-       QUICK BOOKING SECTION
-    ============================================================ */
-    .booking {
-      background: var(--bg-dark); /* ← Booking section background */
-      color: var(--text-light);
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* ── BOOKING BACKGROUND IMAGE ── */
-    .booking-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('images/booking-bg.jpg'); /* ← ADD BOOKING BACKGROUND IMAGE */
-      background-size: cover;
-      background-position: center;
-      opacity: 0.08;
-    }
-
-    .booking-inner {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .booking-left .section-title { color: var(--text-light); }
-    .booking-left .section-subtitle { color: #999; }
-
-    .booking-perks {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-top: 32px;
-    }
-
-    .perk {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-family: var(--font-body);
-      font-size: 0.88rem;
-      color: #bbbbbb;
-    }
-
-    .perk-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--bg-accent); /* ← Perk dot color */
-      flex-shrink: 0;
-    }
-
-    .booking-form {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 8px;
-      padding: 40px;
-    }
-
-    .form-title {
-      font-family: var(--font-title);
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--text-light);
-      margin-bottom: 28px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-bottom: 16px;
-    }
-
-    .form-group label {
-      font-family: var(--font-title);
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #888;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: var(--radius);
-      padding: 12px 16px;
-      color: var(--text-light);
-      font-family: var(--font-body);
-      font-size: 0.88rem;
-      transition: border-color var(--transition);
-      outline: none;
-      width: 100%;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--bg-accent); /* ← Form focus border color */
-    }
-
-    .form-group select option { background: #222; }
-
-    .form-group textarea { resize: vertical; min-height: 80px; }
-
-    .form-group.full { grid-column: 1 / -1; }
-
-    .btn-book {
-      width: 100%;
-      background: var(--bg-accent); /* ← Book button color */
-      color: var(--text-light);
-      font-family: var(--font-title);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 16px;
-      border: none;
-      border-radius: var(--radius);
-      cursor: pointer;
-      margin-top: 8px;
-      transition: opacity var(--transition), transform var(--transition);
-    }
-    .btn-book:hover { opacity: 0.88; transform: translateY(-2px); }
-
-    /* ============================================================
-       TESTIMONIALS SECTION
-    ============================================================ */
-    .testimonials {
-      background: var(--bg-main); /* ← Testimonials background */
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 24px;
-    }
-
-    .testi-card {
-      background: var(--text-light);
-      border-radius: var(--radius);
-      padding: 32px;
-      position: relative;
-      border-bottom: 3px solid transparent;
-      transition: border-color var(--transition), transform var(--transition);
-    }
-    .testi-card:hover {
-      border-color: var(--bg-accent);
-      transform: translateY(-4px);
-    }
-
-    .testi-quote {
-      font-size: 3rem;
-      line-height: 1;
-      color: var(--bg-accent); /* ← Quote mark color */
-      font-family: Georgia, serif;
-      margin-bottom: 12px;
-    }
-
-    .testi-text {
-      font-family: var(--font-body);
-      font-size: 0.88rem;
-      line-height: 1.75;
-      color: var(--text-muted);
-      margin-bottom: 24px;
-    }
-
-    .testi-author {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    /* ── TESTIMONIAL AVATAR IMAGE ── */
-    .testi-avatar {
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      background-color: #ddd;
-      background-image: url('images/avatar-placeholder.jpg'); /* ← ADD AVATAR IMAGE */
-      background-size: cover;
-      flex-shrink: 0;
-    }
-
-    .testi-name {
-      font-family: var(--font-title);
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--text-dark);
-    }
-    .testi-vehicle {
-      font-family: var(--font-body);
-      font-size: 0.72rem;
-      color: #999;
-      margin-top: 2px;
-    }
-
-    .testi-stars {
-      position: absolute;
-      top: 32px; right: 32px;
-      color: #f5a623;
-      font-size: 0.8rem;
-      letter-spacing: 2px;
-    }
-
-    /* ============================================================
-       CONTACT STRIP
-    ============================================================ */
-    .contact-strip {
-      background: var(--bg-accent); /* ← Contact strip background */
-      color: var(--text-light);
-      padding: 48px 80px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 32px;
-    }
-
-    .contact-strip h2 {
-      font-family: var(--font-header);
-      font-size: clamp(2rem, 4vw, 3rem);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .contact-details {
-      display: flex;
-      gap: 48px;
-      flex-wrap: wrap;
-    }
-
-    .contact-item {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .contact-label {
-      font-family: var(--font-title);
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      opacity: 0.7;
-      margin-bottom: 4px;
-    }
-
-    .contact-value {
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
-
-    /* ============================================================
-       FOOTER
-    ============================================================ */
-    footer {
-      background: #0a0a0a;
-      color: #777;
-      padding: 48px 80px 32px;
-    }
-
-    .footer-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 40px;
-      flex-wrap: wrap;
-      padding-bottom: 40px;
-      border-bottom: 1px solid #222;
-      margin-bottom: 32px;
-    }
-
-    .footer-logo {
-      font-family: var(--font-header);
-      font-size: 2.5rem;
-      color: var(--text-light);
-      letter-spacing: 2px;
-    }
-
-    .footer-logo span { color: var(--bg-accent); }
-
-    .footer-tagline {
-      font-family: var(--font-body);
-      font-size: 0.8rem;
-      color: #555;
-      margin-top: 8px;
-      max-width: 240px;
-      line-height: 1.6;
-    }
-
-    .footer-links h4 {
-      font-family: var(--font-title);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--text-light);
-      margin-bottom: 16px;
-    }
-
-    .footer-links ul {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .footer-links a {
-      font-family: var(--font-body);
-      font-size: 0.82rem;
-      color: #666;
-      transition: color var(--transition);
-    }
-    .footer-links a:hover { color: var(--bg-accent); }
-
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .footer-copy {
-      font-family: var(--font-body);
-      font-size: 0.75rem;
-      color: #444;
-    }
-
-    /* ============================================================
-       ANIMATIONS
-    ============================================================ */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ============================================================
-       RESPONSIVE — MOBILE
-    ============================================================ */
-    @media (max-width: 900px) {
-      nav { padding: 0 24px; }
-      .nav-links { display: none; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: var(--bg-dark); padding: 24px; gap: 20px; }
-      .nav-links.open { display: flex; }
-      .hamburger { display: flex; }
-      section { padding: 64px 24px; }
-      .hero-content { padding: 120px 24px 80px; }
-      .hero-stats { right: 24px; gap: 24px; }
-      .booking-inner { grid-template-columns: 1fr; gap: 40px; }
-      .form-row { grid-template-columns: 1fr; }
-      .contact-strip { padding: 40px 24px; }
-      footer { padding: 48px 24px 32px; }
-      .hero h1 { font-size: 4rem; }
-    }
-
-    @media (max-width: 600px) {
-      .hero-stats { display: none; }
-      .products-header { flex-direction: column; align-items: flex-start; }
-      .contact-details { flex-direction: column; gap: 20px; }
-      .footer-top { flex-direction: column; }
-    }
-  </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- ================================================
-       NAVIGATION
-  ================================================= -->
-  <nav>
-     class="nav-logo">AUTO<span>MOD</span><!-- ← Change business name here -->
+    <!-- =========================
+    HEADER
+    ========================= -->
 
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Parts Catalogue</a></li>
-      <li><a href="#">Book Appointment</a></li>
-      <li><a href="#">Shop</a></li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#" class="nav-cta">Sign Up</a></li>
-    </ul>
+    <header>
 
-    <div class="hamburger" id="hamburger" onclick="toggleNav()">
-      <span></span><span></span><span></span>
-    </div>
-  </nav>
+        <h1>PZ PERFORMANCE</h1>
 
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="catalogue.html">Parts Catalogue</a>
+            <a href="booking.html">Book Appointment</a>
+            <a href="shop.html">Shop</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
 
-  <!-- ================================================
-       HERO SECTION
-       ► Replace 'images/hero-car.jpg' with your actual image
-  ================================================= -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Performance &amp; Style Workshop</p><!-- ← Edit tagline -->
-      <h1>Built to<br/><em>Perform.</em></h1><!-- ← Edit hero headline -->
-      <p>From precision engine tuning to full body transformations — we turn your car into a machine that reflects who you are.</p><!-- ← Edit hero description -->
-      <div class="hero-buttons">
-        <a href="#booking" class="btn-primary">Book a Service</a>
-        <a href="#services" class="btn-outline">Explore Services</a>
-      </div>
-    </div>
+    </header>
 
-    <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-number">500+</div><!-- ← Edit stat -->
-        <div class="stat-label">Builds Done</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">12+</div>
-        <div class="stat-label">Years Active</div>
-      </div>
-      <div class="stat">
-        <div class="stat-number">98%</div>
-        <div class="stat-label">Satisfaction</div>
-      </div>
-    </div>
-  </section>
+    <!-- =========================
+    HERO SECTION
+    ========================= -->
 
+    <section>
 
-  <!-- ================================================
-       SERVICES SECTION
-       ► Each .service-card-img needs its own background-image url
-  ================================================= -->
-  <section class="services" id="services">
-    <p class="section-label">What We Do</p>
-    <h2 class="section-title">Our Services</h2>
-    <p class="section-subtitle">Every build is handled by specialists with a passion for automotive excellence.</p>
+        <h2>WE TURN YOUR CAR FROM STOCK TO SHOCK</h2>
 
-    <div class="services-grid">
+        <p>
+            PZ Performance specializes in tuning, maintenance,
+            body upgrades, suspension upgrades, exhaust systems,
+            wraps and premium aftermarket parts.
+        </p>
 
-      <!-- Service Card 1 -->
-      <div class="service-card">
-        <div class="service-card-img" style="background-image: url('images/service-engine.jpg');"></div><!-- ← ADD IMAGE -->
-        <div class="service-icon">⚙️</div>
-        <div class="service-arrow">↗</div>
-        <div class="service-name">Engine Tuning</div>
-        <div class="service-desc">ECU remapping and performance tuning to unlock maximum power and efficiency from your engine.</div>
-        <div class="service-meta">
-          <span class="service-price">From P1,500</span><!-- ← Edit price -->
-          <span class="service-duration">2–4 hrs</span><!-- ← Edit duration -->
-        </div>
-      </div>
+        <!-- =========================
+        ADD HERO IMAGE HERE
+        Replace image1.jpg with your own image
+        ========================= -->
 
-      <!-- Service Card 2 -->
-      <div class="service-card">
-        <div class="service-card-img" style="background-image: url('images/service-suspension.jpg');"></div><!-- ← ADD IMAGE -->
-        <div class="service-icon">🔩</div>
-        <div class="service-arrow">↗</div>
-        <div class="service-name">Suspension Upgrades</div>
-        <div class="service-desc">Coilovers, lowering springs, and handling setups for track or street driving dynamics.</div>
-        <div class="service-meta">
-          <span class="service-price">From P2,200</span>
-          <span class="service-duration">3–5 hrs</span>
-        </div>
-      </div>
+        <img src="image1.jpg" alt="Modified Car">
 
-      <!-- Service Card 3 -->
-      <div class="service-card">
-        <div class="service-card-img" style="background-image: url('images/service-bodykit.jpg');"></div><!-- ← ADD IMAGE -->
-        <div class="service-icon">🚘</div>
-        <div class="service-arrow">↗</div>
-        <div class="service-name">Body Kit Installation</div>
-        <div class="service-desc">Custom front lips, side skirts, rear diffusers, and spoilers fitted and finished to perfection.</div>
-        <div class="service-meta">
-          <span class="service-price">From P3,000</span>
-          <span class="service-duration">1–2 days</span>
-        </div>
-      </div>
+        <br><br>
 
-      <!-- Service Card 4 -->
-      <div class="service-card">
-        <div class="service-card-img" style="background-image: url('images/service-paint.jpg');"></div><!-- ← ADD IMAGE -->
-        <div class="service-icon">🎨</div>
-        <div class="service-arrow">↗</div>
-        <div class="service-name">Paint &amp; Wraps</div>
-        <div class="service-desc">Full resprays, colour change wraps, and custom vinyl designs using premium materials.</div>
-        <div class="service-meta">
-          <span class="service-price">From P4,500</span>
-          <span class="service-duration">2–5 days</span>
-        </div>
-      </div>
+        <button>BOOK NOW</button>
 
-      <!-- Service Card 5 -->
-      <div class="service-card">
-        <div class="service-card-img" style="background-image: url('images/service-exhaust.jpg');"></div><!-- ← ADD IMAGE -->
-        <div class="service-icon">💨</div>
-        <div class="service-arrow">↗</div>
-        <div class="service-name">Exhaust Systems</div>
-        <div class="service-desc">Cat-back and axle-back systems, custom fabrication, and performance headers for optimal flow.</div>
-        <div class="service-meta">
-          <span class="service-price">From P1,800</span>
-          <span class="service-duration">2–3 hrs</span>
-        </div>
-      </div>
+    </section>
 
-      <!-- Service Card 6 -->
-      <div class="service-card">
-        <div class="service-card-img" style="background-image: url('images/service-brakes.jpg');"></div><!-- ← ADD IMAGE -->
-        <div class="service-icon">🛑</div>
-        <div class="service-arrow">↗</div>
-        <div class="service-name">Brake Upgrades</div>
-        <div class="service-desc">Big brake kits, performance pads and rotors for serious stopping power on any build.</div>
-        <div class="service-meta">
-          <span class="service-price">From P1,200</span>
-          <span class="service-duration">2–3 hrs</span>
-        </div>
-      </div>
+    <!-- =========================
+    FEATURED SERVICES
+    ========================= -->
 
-    </div>
-  </section>
+    <section>
 
+        <h2>FEATURED SERVICES</h2>
 
-  <!-- ================================================
-       FEATURED PRODUCTS SECTION
-       ► Each .product-img needs its own background-image url
-  ================================================= -->
-  <section class="products" id="products">
-    <div class="products-header">
-      <div>
-        <p class="section-label">Popular Picks</p>
-        <h2 class="section-title">Featured Parts</h2>
-        <p class="section-subtitle">Top-selling components trusted by enthusiasts across the region.</p>
-      </div>
-      <a href="#" class="view-all">View Full Catalogue →</a>
-    </div>
+        <h3>Engine Tuning</h3>
+        <p>Professional ECU tuning for power and performance.</p>
 
-    <div class="products-grid">
+        <h3>Body Kits</h3>
+        <p>Premium exterior upgrades and custom styling.</p>
 
-      <!-- Product 1 -->
-      <div class="product-card">
-        <div class="product-img" style="background-image: url('images/product-intake.jpg');"><!-- ← ADD IMAGE -->
-          <div class="product-badge">Best Seller</div>
-        </div>
-        <div class="product-info">
-          <div class="product-category">Engine Parts</div>
-          <div class="product-name">Cold Air Intake Kit</div><!-- ← Edit product name -->
-          <div class="product-compat">Fits: Toyota, Honda, Mazda</div><!-- ← Edit compatibility -->
-          <div class="product-footer">
-            <div class="product-price">P850</div><!-- ← Edit price -->
-            <button class="add-to-cart">Add to Cart</button>
-          </div>
-        </div>
-      </div>
+        <h3>Suspension Upgrades</h3>
+        <p>Improved stability, handling and comfort.</p>
 
-      <!-- Product 2 -->
-      <div class="product-card">
-        <div class="product-img" style="background-image: url('images/product-coilover.jpg');"><!-- ← ADD IMAGE -->
-          <div class="product-badge">New</div>
-        </div>
-        <div class="product-info">
-          <div class="product-category">Suspension</div>
-          <div class="product-name">Adjustable Coilover Set</div>
-          <div class="product-compat">Fits: BMW, Audi, VW</div>
-          <div class="product-footer">
-            <div class="product-price">P4,200</div>
-            <button class="add-to-cart">Add to Cart</button>
-          </div>
-        </div>
-      </div>
+    </section>
 
-      <!-- Product 3 -->
-      <div class="product-card">
-        <div class="product-img" style="background-image: url('images/product-brakes.jpg');"><!-- ← ADD IMAGE -->
-        </div>
-        <div class="product-info">
-          <div class="product-category">Brake Components</div>
-          <div class="product-name">Performance Brake Pad Set</div>
-          <div class="product-compat">Universal — Most Vehicles</div>
-          <div class="product-footer">
-            <div class="product-price">P320</div>
-            <button class="add-to-cart">Add to Cart</button>
-          </div>
-        </div>
-      </div>
+    <!-- =========================
+    POPULAR PRODUCTS
+    ========================= -->
 
-      <!-- Product 4 -->
-      <div class="product-card">
-        <div class="product-img" style="background-image: url('images/product-exhaust.jpg');"><!-- ← ADD IMAGE -->
-          <div class="product-badge">Sale</div>
-        </div>
-        <div class="product-info">
-          <div class="product-category">Exhaust Systems</div>
-          <div class="product-name">Cat-Back Exhaust — Sport</div>
-          <div class="product-compat">Fits: Honda Civic 2016–2022</div>
-          <div class="product-footer">
-            <div class="product-price">P2,100</div>
-            <button class="add-to-cart">Add to Cart</button>
-          </div>
-        </div>
-      </div>
+    <section>
 
-    </div>
-  </section>
+        <h2>POPULAR PRODUCTS</h2>
 
+        <article>
 
-  <!-- ================================================
-       QUICK BOOKING SECTION
-       ► Replace 'images/booking-bg.jpg' with a background image
-  ================================================= -->
-  <section class="booking" id="booking">
-    <div class="booking-bg"></div>
-    <div class="booking-inner">
+            <!-- PRODUCT IMAGE -->
+            <!-- ADD PRODUCT IMAGE HERE -->
 
-      <div class="booking-left">
-        <p class="section-label">Schedule a Visit</p>
-        <h2 class="section-title">Book Your Appointment</h2>
-        <p class="section-subtitle">Fast and easy — pick your service, choose your time, and we'll take care of the rest.</p>
-        <div class="booking-perks">
-          <div class="perk"><div class="perk-dot"></div>Instant booking confirmation via email</div>
-          <div class="perk"><div class="perk-dot"></div>SMS reminders before your appointment</div>
-          <div class="perk"><div class="perk-dot"></div>Easy reschedule or cancellation</div>
-          <div class="perk"><div class="perk-dot"></div>No deposit required to book</div>
-        </div>
-      </div>
+            <img src="turbo.jpg" alt="Turbo Kit">
 
-      <div class="booking-form">
-        <p class="form-title">Quick Booking Form</p>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="fname">Full Name</label>
-            <input type="text" id="fname" placeholder="John Doe"/>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" placeholder="+267 71 234 567"/>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" placeholder="you@example.com"/>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="vmake">Vehicle Make &amp; Model</label>
-            <input type="text" id="vmake" placeholder="e.g. Toyota Hilux"/>
-          </div>
-          <div class="form-group">
-            <label for="vreg">Registration Number</label>
-            <input type="text" id="vreg" placeholder="e.g. B 123 ABC"/>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="service">Requested Service</label>
-            <select id="service">
-              <option value="">Select a service…</option>
-              <option>Engine Tuning</option>
-              <option>Suspension Upgrade</option>
-              <option>Body Kit Installation</option>
-              <option>Paint &amp; Wraps</option>
-              <option>Exhaust Systems</option>
-              <option>Brake Upgrades</option>
-              <option>Vehicle Maintenance</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="date">Preferred Date</label>
-            <input type="date" id="date"/>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="notes">Additional Notes</label>
-          <textarea id="notes" placeholder="Any special requests or details about your vehicle…"></textarea>
-        </div>
-        <button class="btn-book" onclick="handleBooking()">Confirm Booking</button>
-      </div>
+            <h3>Turbo Kit</h3>
 
-    </div>
-  </section>
+            <p>P12 500</p>
 
+        </article>
 
-  <!-- ================================================
-       TESTIMONIALS
-       ► Replace avatar background-image urls with real photos
-  ================================================= -->
-  <section class="testimonials">
-    <p class="section-label">Happy Customers</p>
-    <h2 class="section-title">What They Say</h2>
-    <p class="section-subtitle">Real feedback from real clients who trusted us with their builds.</p>
+        <article>
 
-    <div class="testimonials-grid">
+            <img src="exhaust.jpg" alt="Exhaust System">
 
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-quote">"</div>
-        <p class="testi-text">Had my suspension upgraded and the difference is night and day. The team was professional, fast, and the fitment was perfect. Will definitely be back for the engine tune next.</p><!-- ← Edit review -->
-        <div class="testi-author">
-          <div class="testi-avatar" style="background-image: url('images/avatar1.jpg');"></div><!-- ← ADD AVATAR -->
-          <div>
-            <div class="testi-name">Kagiso Mokoena</div><!-- ← Edit name -->
-            <div class="testi-vehicle">2019 BMW 3 Series</div><!-- ← Edit vehicle -->
-          </div>
-        </div>
-      </div>
+            <h3>Performance Exhaust</h3>
 
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-quote">"</div>
-        <p class="testi-text">The body kit installation exceeded my expectations. Clean finish, no gaps, and the paint match was spot on. Best workshop in the city hands down.</p>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background-image: url('images/avatar2.jpg');"></div><!-- ← ADD AVATAR -->
-          <div>
-            <div class="testi-name">Tshiamo Seleka</div>
-            <div class="testi-vehicle">2021 Honda Civic Type R</div>
-          </div>
-        </div>
-      </div>
+            <p>P4 300</p>
 
-      <div class="testi-card">
-        <div class="testi-stars">★★★★☆</div>
-        <div class="testi-quote">"</div>
-        <p class="testi-text">Ordered a coilover set from the parts catalogue and it arrived quickly. The online booking made it easy to schedule the fitting. Great overall experience.</p>
-        <div class="testi-author">
-          <div class="testi-avatar" style="background-image: url('images/avatar3.jpg');"></div><!-- ← ADD AVATAR -->
-          <div>
-            <div class="testi-name">Dineo Phiri</div>
-            <div class="testi-vehicle">2018 VW Golf GTI</div>
-          </div>
-        </div>
-      </div>
+        </article>
 
-    </div>
-  </section>
+    </section>
 
+    <!-- =========================
+    QUICK BOOKING
+    ========================= -->
 
-  <!-- ================================================
-       CONTACT STRIP
-       ► Update address, phone, hours with real info
-  ================================================= -->
-  <div class="contact-strip">
-    <h2>Find Us &amp; Get In Touch</h2><!-- ← Edit heading -->
-    <div class="contact-details">
-      <div class="contact-item">
-        <span class="contact-label">Address</span>
-        <span class="contact-value">Plot 123, Industrial Area, Gaborone</span><!-- ← EDIT ADDRESS -->
-      </div>
-      <div class="contact-item">
-        <span class="contact-label">Phone</span>
-        <span class="contact-value">+267 71 000 000</span><!-- ← EDIT PHONE -->
-      </div>
-      <div class="contact-item">
-        <span class="contact-label">Hours</span>
-        <span class="contact-value">Mon–Sat: 7:30am – 6:00pm</span><!-- ← EDIT HOURS -->
-      </div>
-    </div>
-  </div>
+    <section>
 
+        <h2>QUICK BOOKING</h2>
 
-  <!-- ================================================
-       FOOTER
-  ================================================= -->
-  <footer>
-    <div class="footer-top">
-      <div>
-        <div class="footer-logo">AUTO<span>MOD</span></div><!-- ← Edit business name -->
-        <p class="footer-tagline">Botswana's premier car modification and maintenance workshop.</p><!-- ← Edit tagline -->
-      </div>
-      <div class="footer-links">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Parts Catalogue</a></li>
-          <li><a href="#">Book Appointment</a></li>
-          <li><a href="#">Shop / Cart</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>Account</h4>
-        <ul>
-          <li><a href="#">Sign Up</a></li>
-          <li><a href="#">Log In</a></li>
-          <li><a href="#">My Orders</a></li>
-          <li><a href="#">My Bookings</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">© 2026 PZ Performance. All rights reserved.</p><!-- ← Edit year/name -->
-      <p class="footer-copy">Designed for performance.</p>
-    </div>
-  </footer>
+        <form>
 
+            <input type="text" placeholder="Full Name">
 
-  <!-- ================================================
-       JAVASCRIPT
-  ================================================= -->
-  <script>
-    // Mobile nav toggle
-    function toggleNav() {
-      document.getElementById('navLinks').classList.toggle('open');
-    }
+            <br><br>
 
-    // Basic booking form handler — replace with real backend call later
-    function handleBooking() {
-      const name  = document.getElementById('fname').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const service = document.getElementById('service').value;
-      const date  = document.getElementById('date').value;
+            <input type="tel" placeholder="Phone Number">
 
-      if (!name || !phone || !email || !service || !date) {
-        alert('Please fill in all required fields before confirming your booking.');
-        return;
-      }
+            <br><br>
 
-      // ← REPLACE THIS with a real fetch() call to your backend
-      alert(`Booking confirmed!\n\nName: ${name}\nService: ${service}\nDate: ${date}\n\nWe'll send a confirmation to ${email}.`);
-    }
+            <input type="email" placeholder="Email Address">
 
-    // Sticky nav background on scroll
-    window.addEventListener('scroll', () => {
-      const nav = document.querySelector('nav');
-      if (window.scrollY > 60) {
-        nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.6)';
-      } else {
-        nav.style.boxShadow = '0 2px 16px rgba(0,0,0,0.4)';
-      }
-    });
+            <br><br>
 
-    // Add-to-cart feedback
-    document.querySelectorAll('.add-to-cart').forEach(btn => {
-      btn.addEventListener('click', function() {
-        const orig = this.textContent;
-        this.textContent = '✓ Added';
-        this.style.background = '#2a7a2a';
-        setTimeout(() => {
-          this.textContent = orig;
-          this.style.background = '';
-        }, 1500);
-      });
-    });
-  </script>
+            <input type="text" placeholder="Vehicle Make & Model">
+
+            <br><br>
+
+            <input type="date">
+
+            <br><br>
+
+            <textarea placeholder="Additional Notes"></textarea>
+
+            <br><br>
+
+            <button type="submit">Submit Booking</button>
+
+        </form>
+
+    </section>
+
+    <!-- =========================
+    TESTIMONIALS
+    ========================= -->
+
+    <section>
+
+        <h2>CUSTOMER TESTIMONIALS</h2>
+
+        <p>
+            “PZ Performance transformed my car completely.
+            Incredible service and attention to detail.”
+        </p>
+
+        <p>- James M.</p>
+
+    </section>
+
+    <!-- =========================
+    CONTACT INFORMATION
+    ========================= -->
+
+    <section>
+
+        <h2>CONTACT US</h2>
+
+        <p>Gaborone, Botswana</p>
+
+        <p>+267 71 453 520/ 75 047 290</p>
+
+        <p>pzperformancee@gmail.com</p>
+
+        <p>Mon - Sat : 8AM - 6PM</p>
+
+    </section>
+
+    <footer>
+
+        <p>© 2026 PZ PERFORMANCE</p>
+
+    </footer>
 
 </body>
+
 </html>
