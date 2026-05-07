@@ -1,76 +1,142 @@
-body{
-  font-family: Arial, sans-serif;
-  color: #333;
-  background: (black); 
-  
-  height:100%;
-  margin:0;
-  padding: 0;
+/* =========================
+FILE: style.css
+========================= */
 
-                      
+
+/* =========================
+CHANGE WEBSITE COLORS HERE
+========================= */
+
+/* MAIN WEBSITE BACKGROUND */
+body {
+    background-color: #D3D3D3;
 }
-header {
-  background-color: #333;
-  color: white;
-  padding: 20px;
-  text-align: center;
+
+/* SIGN UP & CATALOGUE PAGES */
+.red-page {
+    background-color: #CF2025;
 }
-header h1 {
-  margin: 0;
+
+
+/* =========================
+GENERAL STYLING
+========================= */
+
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
-nav {
-  background-color: #555;
-  overflow: hidden;
+
+
+/* =========================
+HEADERS
+========================= */
+
+h1,
+h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
 }
+
+
+/* =========================
+TITLES
+========================= */
+
+h3,
 nav a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
 }
+
+
+/* =========================
+PARAGRAPHS
+========================= */
+
+p,
+input,
+textarea,
+button {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* =========================
+NAVIGATION
+========================= */
+
+nav {
+    padding: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+    font-weight: bold;
+}
+
 nav a:hover {
-    text-decoration: underline;
-  background-color: #777;
+    color: #CF2025;
 }
-main {
-  padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
+
+
+/* =========================
+SECTIONS
+========================= */
+
+section {
+    padding: 40px;
 }
-main img {
-  max-width: 100%;
-  height: auto;
-  display:block
-  margin: 20px auto;
+
+
+/* =========================
+IMAGES
+========================= */
+
+img {
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
 }
+
+
+/* =========================
+FORMS
+========================= */
+
+input,
+textarea {
+    width: 70%;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+
+/* =========================
+BUTTONS
+========================= */
+
+button {
+    background-color: #CF2025;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: black;
+}
+
+
+/* =========================
+FOOTER
+========================= */
 
 footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
+    padding: 20px;
 }
-p {
-  font-size: ;  
-  font-family: poppins;
-  line-height: 1.6;
-}
-a {
-  color: #333;
-  text-decoration: none;
-}
-img {
-    border:5px solid #333;
-  border-radius: 8px;
-}
-main a[href^=mailto]{
-  color: #ff5722;
-  font-weight: bold;
-  text-decoration: underline;
-}
-
