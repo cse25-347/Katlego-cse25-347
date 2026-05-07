@@ -140,3 +140,45 @@ FOOTER
 footer {
     padding: 20px;
 }
+/* =========================
+SELECT DROPDOWN
+========================= */
+
+select {
+    width: 73%;
+    padding: 12px;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* =========================
+ARTICLES
+========================= */
+
+article {
+    padding: 20px;
+}
+
+
+/* =========================
+MOBILE RESPONSIVE
+========================= */
+
+@media(max-width: 768px) {
+
+    img {
+        width: 95%;
+    }
+
+    input,
+    textarea,
+    select {
+        width: 90%;
+    }
+
+    nav a {
+        display: block;
+        margin: 15px;
+    }
+}
