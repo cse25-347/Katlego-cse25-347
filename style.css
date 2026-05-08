@@ -573,7 +573,7 @@ section.content {
   align-items:     flex-start;
   padding:         8rem 2rem 4rem;
   background:      linear-gradient(to right, rgba(26,26,30,0.96) 50%, rgba(26,26,30,0.5)),
-                   url('https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=1400') center / cover no-repeat;
+                   url('images/contact us index w=1400') center / cover no-repeat;
 }
 
 .about-hero .inner {
