@@ -1,3 +1,86 @@
+<style>
+  
+  :root {
+    --red:   #e01010;
+    --dark:  #0a0a0a;
+    --mid:   #161616;
+    --card:  #1c1c1c;
+    --text:  #d8d8d8;
+    --white: #f5f5f5;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body:    'Barlow', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--dark); color: var(--text); font-family: var(--font-body); font-size: 1rem; line-height: 1.6; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+    background: rgba(10,10,10,.92); backdrop-filter: blur(8px);
+    border-bottom: 2px solid var(--red);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: .8rem 2rem;
+  }
+  nav a.logo { font-family: var(--font-display); font-size: 1.7rem; color: var(--white); text-decoration: none; letter-spacing: 2px; }
+  nav a.logo span { color: var(--red); }
+  nav ul { list-style: none; display: flex; gap: 2rem; }
+  nav ul a { color: var(--text); text-decoration: none; font-weight: 600; font-size: .85rem; letter-spacing: 1.5px; text-transform: uppercase; transition: color .2s; }
+  nav ul a:hover { color: var(--red); }
+
+  /* ── HERO ── */
+  /*  PERSONALISE: swap hero-bg with your own car photo URL */
+  .hero {
+    min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+    padding: 7rem 2rem 4rem;
+    background: linear-gradient(120deg, rgba(10,10,10,.9) 50%, rgba(224,16,16,.15)),
+                url('images/homepage w=1600') center/cover no-repeat;
+  }
+  .hero-tag { font-size: .75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--red); margin-bottom: .5rem; }
+  .hero h1 { font-family: var(--font-display); font-size: clamp(3.5rem,10vw,8rem); color: var(--white); line-height: .95; max-width: 700px; }
+  .hero h1 span { color: var(--red); }
+  .hero p { max-width: 480px; margin: 1.5rem 0 2.5rem; font-size: 1.05rem; color: var(--text); }
+  .btn { display: inline-block; background: var(--red); color: var(--white); padding: .85rem 2.2rem; text-decoration: none; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; font-size: .85rem; transition: background .2s, transform .15s; }
+  .btn:hover { background: #ff2020; transform: translateY(-2px); }
+  .btn-outline { background: transparent; border: 2px solid var(--red); color: var(--red); margin-left: 1rem; }
+  .btn-outline:hover { background: var(--red); color: var(--white); }
+
+  /* ── SECTION SHARED ── */
+  section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+  .section-label { font-size: .7rem; letter-spacing: 5px; text-transform: uppercase; color: var(--red); margin-bottom: .5rem; }
+  h2 { font-family: var(--font-display); font-size: clamp(2.2rem,5vw,3.8rem); color: var(--white); line-height: 1; margin-bottom: 1rem; }
+  .divider { width: 60px; height: 3px; background: var(--red); margin: 1rem 0 2rem; }
+
+  /* ── SERVICES CARDS ── */
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+  .card { background: var(--card); border-top: 3px solid var(--red); padding: 2rem; position: relative; overflow: hidden; transition: transform .25s; }
+  .card:hover { transform: translateY(-5px); }
+  .card-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+  .card h3 { font-family: var(--font-display); font-size: 1.6rem; color: var(--white); margin-bottom: .5rem; }
+  .card p { font-size: .9rem; color: #aaa; }
+  .card-num { position: absolute; bottom: -10px; right: 10px; font-family: var(--font-display); font-size: 5rem; color: rgba(224,16,16,.08); line-height: 1; }
+
+  /* ── PUNCHLINE BAND ── */
+  .band { background: var(--red); padding: 3rem 2rem; text-align: center; }
+  .band p { font-family: var(--font-display); font-size: clamp(1.6rem,4vw,2.8rem); color: var(--white); letter-spacing: 2px; }
+  .band small { font-family: var(--font-body); font-size: .85rem; font-style: italic; color: rgba(255,255,255,.7); display: block; margin-top: .3rem; }
+
+  /* ── TESTIMONIALS ── */
+  .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 1.2rem; margin-top: 2.5rem; }
+  .testi { background: var(--card); padding: 1.5rem; border-left: 3px solid var(--red); }
+  .testi p { font-size: .9rem; font-style: italic; color: #ccc; margin-bottom: .8rem; }
+  .testi strong { font-size: .8rem; letter-spacing: 1px; text-transform: uppercase; color: var(--red); }
+
+  /* ── FOOTER ── */
+  footer { background: var(--mid); border-top: 2px solid #222; padding: 2.5rem 2rem; text-align: center; }
+  footer a.logo { font-family: var(--font-display); font-size: 1.4rem; color: var(--white); text-decoration: none; }
+  footer a.logo span { color: var(--red); }
+  footer p { color: #555; font-size: .8rem; margin-top: .5rem; }
+
+  /* ── MOBILE ── */
+  @media(max-width:640px){ nav ul { gap: 1rem; } nav ul a { font-size: .7rem; } .btn-outline { margin-left: 0; margin-top: .8rem; } }
+</style>
+
 body {
     background-image: url("images/homepage.jpg");
     margin: 0;
