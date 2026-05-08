@@ -41,7 +41,7 @@ HERO SECTION
 
 .hero {
 
-    background-image: url("hero-car.jpg");
+    background-image: url("images/homepage.jpg");
 
     background-size: cover;
 
@@ -277,7 +277,7 @@ CONTACT SECTION
 
 .contact-banner {
 
-    background-image: url("contact-bg.jpg");
+    background-image: url("images/contact us index.jpg");
 
     background-size: cover;
 
