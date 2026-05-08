@@ -4,55 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Services – PZ Performance</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<style>
-  :root { --red:#e01010; --dark:#0a0a0a; --mid:#161616; --card:#1c1c1c; --text:#d8d8d8; --white:#f5f5f5; --font-display:'Bebas Neue',sans-serif; --font-body:'Barlow',sans-serif; }
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  body{background:var(--dark);color:var(--text);font-family:var(--font-body);line-height:1.6;}
-
-  nav{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(10,10,10,.92);backdrop-filter:blur(8px);border-bottom:2px solid var(--red);display:flex;align-items:center;justify-content:space-between;padding:.8rem 2rem;}
-  nav a.logo{font-family:var(--font-display);font-size:1.7rem;color:var(--white);text-decoration:none;letter-spacing:2px;}
-  nav a.logo span{color:var(--red);}
-  nav ul{list-style:none;display:flex;gap:2rem;}
-  nav ul a{color:var(--text);text-decoration:none;font-weight:600;font-size:.85rem;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s;}
-  nav ul a:hover,nav ul a.active{color:var(--red);}
-
-  /* PAGE HERO */
-  .page-hero{padding:9rem 2rem 4rem;max-width:1100px;margin:0 auto;}
-  .section-label{font-size:.7rem;letter-spacing:5px;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;}
-  h1{font-family:var(--font-display);font-size:clamp(3rem,8vw,6rem);color:var(--white);line-height:.95;margin-bottom:1rem;}
-  h1 span{color:var(--red);}
-  .divider{width:60px;height:3px;background:var(--red);margin:1rem 0 2rem;}
-
-  /* SERVICE ROWS */
-  section{padding:3rem 2rem;max-width:1100px;margin:0 auto;}
-  .service-row{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;margin-bottom:4rem;background:var(--card);border-top:3px solid var(--red);padding:2.5rem;}
-  .service-row:nth-child(even){direction:rtl;}
-  .service-row > *{direction:ltr;}
-  .service-row img{width:100%;height:220px;object-fit:cover;}
-  /*  PERSONALISE: Replace image src with real workshop/service photos */
-  .service-row h2{font-family:var(--font-display);font-size:2.2rem;color:var(--white);margin-bottom:.5rem;}
-  .service-row p{font-size:.95rem;color:#aaa;margin-bottom:1rem;}
-  .tag{display:inline-block;background:var(--red);color:var(--white);font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;padding:.3rem .7rem;margin:.2rem .2rem 0 0;}
-
-  /* HOURS BAND */
-  .hours{background:var(--mid);border-top:2px solid #222;border-bottom:2px solid #222;padding:3rem 2rem;text-align:center;margin:2rem 0;}
-  .hours h2{font-family:var(--font-display);color:var(--white);font-size:2.5rem;margin-bottom:1.5rem;}
-  .hours-grid{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;}
-  .hours-card{text-align:center;}
-  .hours-card strong{font-family:var(--font-display);font-size:1.8rem;color:var(--red);display:block;}
-  .hours-card span{font-size:.85rem;color:#aaa;text-transform:uppercase;letter-spacing:1px;}
-
-  .btn{display:inline-block;background:var(--red);color:var(--white);padding:.85rem 2.2rem;text-decoration:none;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;font-size:.85rem;transition:background .2s,transform .15s;}
-  .btn:hover{background:#ff2020;transform:translateY(-2px);}
-
-  footer{background:var(--mid);border-top:2px solid #222;padding:2.5rem 2rem;text-align:center;}
-  footer a.logo{font-family:var(--font-display);font-size:1.4rem;color:var(--white);text-decoration:none;}
-  footer a.logo span{color:var(--red);}
-  footer p{color:#555;font-size:.8rem;margin-top:.5rem;}
-
-  @media(max-width:640px){.service-row{grid-template-columns:1fr;}.service-row:nth-child(even){direction:ltr;}.hours-grid{gap:1.5rem;}nav ul{gap:1rem;}nav ul a{font-size:.7rem;}}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
