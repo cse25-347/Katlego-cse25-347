@@ -1,289 +1,306 @@
 /* =========================
-FILE: style.css
-========================= */
-
-
-/* =========================
-CHANGE WEBSITE COLORS HERE
-========================= */
-
-/* MAIN WEBSITE BACKGROUND */
-body {
-    
-    background-image: url("images/pxfuel.jpg");
-    background-size: cover;
-    background-position: center;
-
-    margin: 0;
-    min-height: 100vh;
-    background: gradient(135deg, #1f1f1f, #434343, #d3d3d3);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-}
-
-/* SIGN UP & CATALOGUE PAGES */
-.red-page {
-    background-color: #CF2025;
-}
-
-
-/* =========================
-GENERAL STYLING
+GENERAL
 ========================= */
 
 body {
+
     margin: 0;
-    padding: 0;
-    text-align: center;
+
+    background-color: #D3D3D3;
+
+    color: white;
 }
 
 
 /* =========================
-HEADERS
+FONTS
 ========================= */
 
 h1,
-h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 2px;
-}
-
-
-/* =========================
-TITLES
-========================= */
-
-h3,
-nav a {
-    font-family: 'Montserrat', sans-serif;
-}
-
-
-/* =========================
-PARAGRAPHS
-========================= */
-
-p,
-input,
-textarea,
-button {
-    font-family: 'Poppins', sans-serif;
-}
-
-
-/* =========================
-NAVIGATION
-========================= */
-
-nav {
-    padding: 15px;
-}
-
-nav a {
-    text-decoration: none;
-    color: black;
-    margin: 10px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #CF2025;
-}
-
-
-/* =========================
-SECTIONS
-========================= */
-
-section {
-    padding: 40px;
-}
-
-
-/* =========================
-IMAGES
-========================= */
-
-img {
-    width: 80%;
-    max-width: 500px;
-    border-radius: 10px;
-}
-
-
-/* =========================
-FORMS
-========================= */
-
-input,
-textarea {
-    width: 70%;
-    padding: 12px;
-    border: 1px solid black;
-    border-radius: 5px;
-}
-
-
-/* =========================
-BUTTONS
-========================= */
-
-button {
-    background-color: #CF2025;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: black;
-}
-
-
-/* =========================
-FOOTER
-========================= */
-
-footer {
-    padding: 20px;
-}
-/* =========================
-SELECT DROPDOWN
-========================= */
-
-select {
-    width: 73%;
-    padding: 12px;
-    border-radius: 5px;
-    font-family: 'Poppins', sans-serif;
-}
-
-
-/* =========================
-ARTICLES
-========================= */
-
-article {
-    padding: 20px;
-}
-
-
-/* =========================
-MOBILE RESPONSIVE
-========================= */
-
-@media(max-width: 768px) {
-
-    img {
-        width: 95%;
-    }
-
-    input,
-    textarea,
-    select {
-        width: 90%;
-    }
-
-    nav a {
-        display: block;
-        margin: 15px;
-    }
-
-/* =========================
-CONTACT BANNER
-========================= */
-
-.contact-banner {
-
-    background-image: url("bmw-background.jpg");
-
-    /* CHANGE IMAGE HERE */
-
-    background-size: cover;
-
-    background-position: center;
-
-    min-height: 500px;
-
-    color: white;
-}
-
-
-/* DARK OVERLAY */
-
-.overlay {
-
-    background-color: rgba(0, 0, 0, 0.55);
-
-    min-height: 500px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: flex-start;
-
-    padding: 40px;
-}
-
-
-/* LEFT SIDE */
-
-.contact-left {
-
-    width: 30%;
-
-    text-align: left;
-}
-
-
-/* CENTER */
-
-.contact-center {
-
-    width: 20%;
-
-    text-align: center;
-}
-
-
-/* RIGHT SIDE */
-
-.contact-right {
-
-    width: 30%;
-
-    text-align: left;
-}
-
-
-/* HEADINGS */
-
-.contact-banner h1,
-.contact-banner h2,
-.contact-banner h3 {
+h2,
+h3 {
 
     font-family: 'Bebas Neue', sans-serif;
 
     letter-spacing: 1px;
 }
 
-
-/* PARAGRAPHS */
-
-.contact-banner p,
-.contact-banner label {
+p,
+a,
+input,
+select,
+button {
 
     font-family: 'Poppins', sans-serif;
-
-    font-size: 14px;
 }
 
 
-/* FORM INPUTS */
+/* =========================
+HERO SECTION
+========================= */
+
+.hero {
+
+    background-image: url("hero-car.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    padding: 40px;
+}
+
+
+/* LEFT NAV */
+
+.side-nav {
+
+    width: 25%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding-top: 120px;
+
+    gap: 15px;
+}
+
+.side-nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 32px;
+
+    transition: 0.3s;
+}
+
+.side-nav a:hover {
+
+    color: #CF2025;
+}
+
+
+/* CENTER HERO */
+
+.hero-center {
+
+    width: 75%;
+
+    text-align: center;
+}
+
+.logo-link {
+
+    color: white;
+
+    text-decoration: none;
+}
+
+.hero-center h1 {
+
+    font-size: 80px;
+
+    margin-bottom: 10px;
+}
+
+.hero-center p {
+
+    font-size: 30px;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* BUTTON */
+
+button {
+
+    background-color: #CF2025;
+
+    border: none;
+
+    color: white;
+
+    padding: 14px 30px;
+
+    cursor: pointer;
+
+    margin-top: 20px;
+}
+
+button:hover {
+
+    background-color: black;
+}
+
+
+/* =========================
+ABOUT SECTION
+========================= */
+
+.about-section,
+.maintenance-section {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 80px;
+
+    color: black;
+}
+
+.about-section article,
+.maintenance-section article {
+
+    width: 45%;
+}
+
+.about-section h2,
+.maintenance-section h2 {
+
+    font-size: 60px;
+}
+
+
+/* =========================
+WHAT WE OFFER
+========================= */
+
+.offer-section {
+
+    background-color: black;
+
+    padding: 80px;
+
+    text-align: center;
+}
+
+.offer-section h1 {
+
+    font-size: 70px;
+}
+
+.offer-grid {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 50px;
+}
+
+.offer-grid article {
+
+    width: 30%;
+}
+
+.offer-grid img {
+
+    width: 100%;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+CATALOGUE
+========================= */
+
+.catalogue-section {
+
+    background-color: #CF2025;
+
+    padding: 80px;
+
+    text-align: center;
+}
+
+.catalogue-section input {
+
+    width: 70%;
+
+    padding: 15px;
+
+    margin: 30px 0;
+}
+
+.parts-grid {
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.parts-grid article {
+
+    width: 30%;
+}
+
+.parts-grid img {
+
+    width: 100%;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+REVIEWS
+========================= */
+
+.review-section {
+
+    background-color: black;
+
+    padding: 80px;
+
+    text-align: center;
+}
+
+.review-section article {
+
+    margin-top: 30px;
+}
+
+
+/* =========================
+CONTACT SECTION
+========================= */
+
+.contact-banner {
+
+    background-image: url("contact-bg.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.overlay {
+
+    background-color: rgba(0,0,0,0.6);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 50px;
+}
+
+.contact-left,
+.contact-center,
+.contact-right {
+
+    width: 30%;
+}
 
 .contact-right input,
 .contact-right select {
@@ -297,48 +314,73 @@ CONTACT BANNER
     border: 1px solid white;
 
     color: white;
-
-    font-family: 'Poppins', sans-serif;
 }
 
 
-/* PLACEHOLDER COLOR */
+/* =========================
+FOOTER
+========================= */
 
-.contact-right input::placeholder {
+footer {
 
-    color: lightgray;
+    background-color: black;
+
+    text-align: center;
+
+    padding: 20px;
 }
 
 
-/* REPLY TEXT */
-
-.reply-text {
-
-    margin-top: 20px;
-
-    font-weight: bold;
-}
-
-
-/* MOBILE RESPONSIVE */
+/* =========================
+RESPONSIVE
+========================= */
 
 @media(max-width: 768px) {
 
+    .hero,
+    .about-section,
+    .maintenance-section,
+    .offer-grid,
+    .parts-grid,
     .overlay {
 
         flex-direction: column;
-
-        text-align: center;
     }
 
+    .side-nav,
+    .hero-center,
+    .about-section article,
+    .maintenance-section article,
+    .offer-grid article,
+    .parts-grid article,
     .contact-left,
     .contact-center,
     .contact-right {
 
         width: 100%;
+    }
+
+    .hero-center h1 {
+
+        font-size: 45px;
+    }
+
+    .hero-center p {
+
+        font-size: 20px;
+    }
+
+    .side-nav {
+
+        padding-top: 20px;
+
+        text-align: center;
+    }
+
+    .offer-grid article,
+    .parts-grid article {
 
         margin-bottom: 30px;
     }
 
-}
 }
