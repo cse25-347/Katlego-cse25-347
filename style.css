@@ -191,4 +191,154 @@ MOBILE RESPONSIVE
         display: block;
         margin: 15px;
     }
+
+/* =========================
+CONTACT BANNER
+========================= */
+
+.contact-banner {
+
+    background-image: url("bmw-background.jpg");
+
+    /* CHANGE IMAGE HERE */
+
+    background-size: cover;
+
+    background-position: center;
+
+    min-height: 500px;
+
+    color: white;
+}
+
+
+/* DARK OVERLAY */
+
+.overlay {
+
+    background-color: rgba(0, 0, 0, 0.55);
+
+    min-height: 500px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    padding: 40px;
+}
+
+
+/* LEFT SIDE */
+
+.contact-left {
+
+    width: 30%;
+
+    text-align: left;
+}
+
+
+/* CENTER */
+
+.contact-center {
+
+    width: 20%;
+
+    text-align: center;
+}
+
+
+/* RIGHT SIDE */
+
+.contact-right {
+
+    width: 30%;
+
+    text-align: left;
+}
+
+
+/* HEADINGS */
+
+.contact-banner h1,
+.contact-banner h2,
+.contact-banner h3 {
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    letter-spacing: 1px;
+}
+
+
+/* PARAGRAPHS */
+
+.contact-banner p,
+.contact-banner label {
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+}
+
+
+/* FORM INPUTS */
+
+.contact-right input,
+.contact-right select {
+
+    width: 100%;
+
+    padding: 10px;
+
+    background: transparent;
+
+    border: 1px solid white;
+
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* PLACEHOLDER COLOR */
+
+.contact-right input::placeholder {
+
+    color: lightgray;
+}
+
+
+/* REPLY TEXT */
+
+.reply-text {
+
+    margin-top: 20px;
+
+    font-weight: bold;
+}
+
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width: 768px) {
+
+    .overlay {
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .contact-left,
+    .contact-center,
+    .contact-right {
+
+        width: 100%;
+
+        margin-bottom: 30px;
+    }
+
+}
 }
