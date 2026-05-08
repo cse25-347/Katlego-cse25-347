@@ -1,68 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parts Catalogue</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parts Catalogue – PZ Performance</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{--red:#e01010;--dark:#0a0a0a;--mid:#161616;--card:#1c1c1c;--text:#d8d8d8;--white:#f5f5f5;--font-display:'Bebas Neue',sans-serif;--font-body:'Barlow',sans-serif;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--dark);color:var(--text);font-family:var(--font-body);line-height:1.6;}
 
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  nav{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(10,10,10,.92);backdrop-filter:blur(8px);border-bottom:2px solid var(--red);display:flex;align-items:center;justify-content:space-between;padding:.8rem 2rem;}
+  nav a.logo{font-family:var(--font-display);font-size:1.7rem;color:var(--white);text-decoration:none;letter-spacing:2px;}
+  nav a.logo span{color:var(--red);}
+  nav ul{list-style:none;display:flex;gap:2rem;}
+  nav ul a{color:var(--text);text-decoration:none;font-weight:600;font-size:.85rem;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s;}
+  nav ul a:hover,nav ul a.active{color:var(--red);}
 
-    <link rel="stylesheet" href="style.css">
+  .page-hero{padding:9rem 2rem 3rem;max-width:1100px;margin:0 auto;}
+  .section-label{font-size:.7rem;letter-spacing:5px;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;}
+  h1{font-family:var(--font-display);font-size:clamp(2.8rem,7vw,5.5rem);color:var(--white);line-height:.95;margin-bottom:1rem;}
+  h1 span{color:var(--red);}
+  .divider{width:60px;height:3px;background:var(--red);margin:1rem 0 2rem;}
+
+  /* FILTER BAR */
+  .filter-bar{max-width:1100px;margin:0 auto;padding:0 2rem 2rem;display:flex;flex-wrap:wrap;gap:.6rem;}
+  .filter-btn{background:var(--card);border:1px solid #333;color:var(--text);padding:.45rem 1.1rem;font-family:var(--font-body);font-size:.8rem;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .2s;}
+  .filter-btn.active,.filter-btn:hover{background:var(--red);border-color:var(--red);color:var(--white);}
+
+  /* PRODUCT GRID */
+  .products{max-width:1100px;margin:0 auto;padding:0 2rem 4rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.4rem;}
+  .product-card{background:var(--card);border-top:3px solid transparent;transition:border-color .2s,transform .2s;cursor:pointer;}
+  .product-card:hover{border-color:var(--red);transform:translateY(-4px);}
+  .product-card img{width:100%;height:180px;object-fit:cover;display:block;}
+  .product-info{padding:1.1rem;}
+  .product-info small{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--red);}
+  .product-info h3{font-family:var(--font-display);font-size:1.3rem;color:var(--white);margin:.2rem 0 .4rem;line-height:1.1;}
+  .product-info .price-row{display:flex;align-items:center;gap:.8rem;margin-top:.5rem;}
+  .price-old{text-decoration:line-through;color:#555;font-size:.85rem;}
+  .price-new{color:var(--red);font-weight:700;font-size:1.1rem;}
+
+  /* CART SUMMARY */
+  .cart-band{background:var(--mid);border-top:2px solid #222;border-bottom:2px solid #222;padding:2.5rem 2rem;max-width:1100px;margin:0 auto 4rem;}
+  .cart-band h2{font-family:var(--font-display);font-size:2rem;color:var(--white);margin-bottom:1.2rem;}
+  .cart-line{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px solid #252525;font-size:.9rem;}
+  .cart-line:last-of-type{border:none;}
+  .cart-total{font-family:var(--font-display);font-size:1.8rem;color:var(--red);}
+  .pay-options{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;}
+  .pay-pill{background:var(--card);padding:.5rem 1.2rem;font-size:.75rem;letter-spacing:1.5px;text-transform:uppercase;border:1px solid #333;color:#aaa;}
+
+  .btn{display:inline-block;background:var(--red);color:var(--white);padding:.85rem 2.2rem;text-decoration:none;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;font-size:.85rem;transition:background .2s,transform .15s;}
+  .btn:hover{background:#ff2020;transform:translateY(-2px);}
+
+  footer{background:var(--mid);border-top:2px solid #222;padding:2.5rem 2rem;text-align:center;}
+  footer a.logo{font-family:var(--font-display);font-size:1.4rem;color:var(--white);text-decoration:none;}
+  footer a.logo span{color:var(--red);}
+  footer p{color:#555;font-size:.8rem;margin-top:.5rem;}
+
+  @media(max-width:640px){nav ul{gap:1rem;}nav ul a{font-size:.7rem;}}
+</style>
 </head>
+<body>
 
-<body class="red-page">
+<nav>
+  <a href="index.html" class="logo">PZ<span>Performance</span></a>
+  <ul>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="parts.html" class="active">Parts</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
-<header>
-     <nav>
-            <a href="index.html">Home</a> | 
-            <a href="about.html">About</a> | 
-            <a href="contact.html">Contact</a> | 
-            <a href="services.html">Services</a> | 
-            <a href="parts catalogue.html">Parts Catalogue</a> | 
-            <a href="shop.html">Shop</a> | 
-            <a href="online booking.html">Online Booking</a>
-        </nav>
-
-    <h1>PARTS CATALOGUE</h1>
-
+<header class="page-hero">
+  <p class="section-label">Parts Catalogue</p>
+  <h1>Bolt-On <span>Greatness</span></h1>
+  <hr class="divider">
+  <p>Every part is sourced for quality, not just price. Because cheap parts break — usually at the worst moment. 😬</p>
 </header>
 
-<section>
+<!-- CATEGORY FILTER BUTTONS -->
+<!-- PERSONALISE: Add/remove filter categories to match your actual inventory -->
+<nav class="filter-bar">
+  <button class="filter-btn active">All Parts</button>
+  <button class="filter-btn">Engine Parts</button>
+  <button class="filter-btn">Suspension</button>
+  <button class="filter-btn">Exhaust</button>
+  <button class="filter-btn">Wheels & Rims</button>
+  <button class="filter-btn">Exterior</button>
+  <button class="filter-btn">Accessories</button>
+</nav>
 
-    <input type="text" placeholder="Search Parts">
+<!-- PRODUCT GRID -->
+<!--  PERSONALISE: Update products, prices, images, and categories below -->
+<main class="products">
 
-    <h2>ENGINE PARTS</h2>
+  <article class="product-card">
+    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400" alt="Bull Bar">
+    <section class="product-info">
+      <small>Exterior</small>
+      <h3>Toyota Land Cruiser Titanium Bull Bar</h3>
+      <section class="price-row">
+        <span class="price-old">P9 500</span>
+        <span class="price-new">P8 900</span>
+      </section>
+    </section>
+  </article>
 
-    <article>
+  <article class="product-card">
+    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400" alt="Race Spoiler">
+    <section class="product-info">
+      <small>Exterior</small>
+      <h3>Oettinger MK7 Race Spoiler</h3>
+      <section class="price-row">
+        <span class="price-old">P9 500</span>
+        <span class="price-new">P8 900</span>
+      </section>
+    </section>
+  </article>
 
-        <img src="turbo.jpg" alt="Turbo">
+  <article class="product-card">
+    <img src="https://images.unsplash.com/photo-1547744152-14d985cb937f?w=400" alt="Coilovers">
+    <section class="product-info">
+      <small>Suspension</small>
+      <h3>Bilstein Performance EVO T1 Coilovers</h3>
+      <section class="price-row">
+        <span class="price-old">P10 600</span>
+        <span class="price-new">P9 900</span>
+      </section>
+    </section>
+  </article>
 
-        <h3>Turbo Kit</h3>
+  <article class="product-card">
+    <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400" alt="Cold Air Intake">
+    <section class="product-info">
+      <small>Engine Parts</small>
+      <h3>VW Golf 6 GTI Cold Air Intake</h3>
+      <section class="price-row">
+        <span class="price-old">P1 500</span>
+        <span class="price-new">P1 250</span>
+      </section>
+    </section>
+  </article>
 
-        <p>P12 500</p>
+  <article class="product-card">
+    <img src="https://images.unsplash.com/photo-1612825173281-9a193378527e?w=400" alt="Sport Coilovers">
+    <section class="product-info">
+      <small>Suspension</small>
+      <h3>PZ Sport Coilovers</h3>
+      <section class="price-row">
+        <span class="price-new">P5 370.95</span>
+      </section>
+    </section>
+  </article>
 
-        <button>Add To Cart</button>
+  <!--  PERSONALISE: Duplicate the card template above to add more products -->
 
-    </article>
+</main>
 
-    <article>
-
-        <img src="airfilter.jpg" alt="Air Filter">
-
-        <h3>Performance Air Filter</h3>
-
-        <p>P850</p>
-
-        <button>Add To Cart</button>
-
-    </article>
-
+<!-- CART SUMMARY (static demo) -->
+<section class="cart-band">
+  <h2>Sample Cart</h2>
+  <article class="cart-line"><span>General Service Kit</span><span>P300.00</span></article>
+  <article class="cart-line"><span>PZ Sport Coilovers</span><span>P5 370.95</span></article>
+  <article class="cart-line"><span>VAT</span><span>P793.90</span></article>
+  <article class="cart-line"><span style="font-weight:700;color:var(--white);">Total</span><span class="cart-total">P6 464.80</span></article>
+  <p style="font-size:.8rem;color:#555;font-style:italic;margin:.8rem 0 1.2rem;">Why did the mechanic go broke? He had too many outstanding *charges*. 😅</p>
+  <section class="pay-options">
+    <span class="pay-pill"> VISA</span>
+    <span class="pay-pill"> Cheque</span>
+    <span class="pay-pill"> Pay on Delivery</span>
+  </section>
 </section>
 
 <footer>
-    <p>© 2026 PZ PERFORMANCE</p>
+  <a href="index.html" class="logo">PZ<span>Performance</span></a>
+  <p>© 2026 PZ Performance · Industrial Park Rd, Unit 11, Gaborone · pzperformancee@gmail.com</p>
+  <p style="margin-top:.3rem;color:#444;font-style:italic;">Life's too short to drive boring cars.</p>
 </footer>
 
+<!-- Filter button toggle (no frameworks needed) -->
+<script>
+  document.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
 </body>
 </html>
