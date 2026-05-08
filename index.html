@@ -1,219 +1,380 @@
 <!-- =========================
-FILE: index.html
-MAIN HOMEPAGE
+INDEX.HTML
+PZ PERFORMANCE
 ========================= -->
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>PZ Performance</title>
 
     <!-- GOOGLE FONTS -->
-    <!-- HEADERS = Bebas Neue -->
-    <!-- TITLES = Montserrat -->
-    <!-- PARAGRAPHS = Poppins -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link TITLES = href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link PARAGRAPHS = href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- BOOTSTRAP CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- STYLE CSS -->
+
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <!-- =========================
-    HEADER
-    ========================= -->
+<!-- =========================
+HERO SECTION
+========================= -->
 
-    <header>
+<header class="hero">
 
-        <h1>PZ PERFORMANCE</h1>
+    <!-- LEFT NAVIGATION -->
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="catalogue.html">Parts Catalogue</a>
-            <a href="booking.html">Book Appointment</a>
-            <a href="shop.html">Shop</a>
-            <a href="signup.html">Sign Up</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+    <nav class="side-nav">
 
-    </header>
+        <a href="services.html">SERVICES</a>
 
-    <!-- =========================
-    HERO SECTION
-    ========================= -->
+        <a href="catalogue.html">PARTS CATALOGUE</a>
 
-    <section>
+        <a href="about.html">ABOUT US</a>
 
-        <h2>WE TURN YOUR CAR FROM STOCK TO SHOCK</h2>
+        <a href="contact.html">CONTACT</a>
+
+    </nav>
+
+    <!-- CENTER SECTION -->
+
+    <section class="hero-center">
+
+        <!-- CLICKABLE LOGO -->
+
+        <a href="index.html" class="logo-link">
+
+            <h1>PZ PERFORMANCE</h1>
+
+        </a>
 
         <p>
-            At our core, we don’t just modify cars — we transform them. From precision performance tuning and meticulous maintenance to bold exterior styling and refined interior design, we build machines that reflect both power and personality. Every upgrade we deliver is engineered with purpose, ensuring your vehicle doesn’t just stand out, but performs at its absolute peak. Whether you're chasing speed, style, or reliability, we provide premium parts and expert craftsmanship for all types of cars — turning everyday drives into unforgettable experiences..
+            WE TURN YOUR CAR FROM <br>
+            STOCK TO SHOCK
         </p>
 
-        <!-- =========================
-        ADD HERO IMAGE HERE
-        Replace image1.jpg with your own image
-        ========================= -->
+        <a href="booking.html">
 
-        <img src="images/.jpg" alt="Modified Car">
+            <button>
+                BOOK A TUNE HERE
+            </button>
 
-        <br><br>
-
-        <button>BOOK NOW</button>
+        </a>
 
     </section>
 
-    <!-- =========================
-    FEATURED SERVICES
-    ========================= -->
+</header>
 
-    <section>
+<!-- =========================
+ABOUT SECTION
+========================= -->
 
-        <h2>FEATURED SERVICES</h2>
+<section class="about-section">
 
-        <h3>Engine Tuning</h3>
-        <p>Professional ECU tuning for power and performance.</p>
+    <article>
 
-        <h3>Body Kits</h3>
-        <p>Premium exterior upgrades and custom styling.</p>
+        <p>
+            We don’t just tune cars, we refine them into
+            machines that command respect on the street.
+            Every build is carefully engineered for
+            performance, balance, and reliability.
+        </p>
 
-        <h3>Suspension Upgrades</h3>
-        <p>Improved stability, handling and comfort.</p>
+    </article>
 
-    </section>
+    <article>
 
-    <!-- =========================
-    POPULAR PRODUCTS
-    ========================= -->
+        <h2>PERFORMANCE IS EVERYTHING</h2>
 
-    <section>
+    </article>
 
-        <h2>POPULAR PRODUCTS</h2>
+</section>
+
+<!-- =========================
+SECOND ABOUT
+========================= -->
+
+<section class="maintenance-section">
+
+    <article>
+
+        <h2>
+            BUT ABOVE ALL,
+            MAINTENANCE IS KEY...
+        </h2>
+
+    </article>
+
+    <article>
+
+        <p>
+            When it comes to tuned vehicles,
+            performance means nothing without
+            proper maintenance and servicing.
+        </p>
+
+    </article>
+
+</section>
+
+<!-- =========================
+WHAT WE OFFER
+========================= -->
+
+<section class="offer-section">
+
+    <h1>PZ PERFORMANCE</h1>
+
+    <h2>WHAT WE OFFER</h2>
+
+    <section class="offer-grid">
 
         <article>
 
-            <!-- PRODUCT IMAGE -->
-            <!-- ADD PRODUCT IMAGE HERE -->
+            <img src="maintenance.jpg" alt="Maintenance">
 
-            <img src="turbo.jpg" alt="Turbo Kit">
+            <h3>Maintenance</h3>
 
-            <h3>Turbo Kit</h3>
-
-            <p>P12 500</p>
+            <p>
+                Regular checkups to maintain
+                your car's high performance
+            </p>
 
         </article>
 
         <article>
 
-            <img src="exhaust.jpg" alt="Exhaust System">
+            <img src="tuning.jpg" alt="Performance">
 
-            <h3>Performance Exhaust</h3>
+            <h3>Performance Tuning</h3>
 
-            <p>P4 300</p>
+            <p>
+                Quality service that guarantees
+                smooth and safe rides
+            </p>
+
+        </article>
+
+        <article>
+
+            <img src="parts.jpg" alt="Parts">
+
+            <h3>Parts / Accessories</h3>
+
+            <p>
+                Premium interior and exterior
+                parts for standout style
+            </p>
 
         </article>
 
     </section>
 
-    <!-- =========================
-    QUICK BOOKING
-    ========================= -->
+</section>
 
-    <section>
+<!-- =========================
+PARTS CATALOGUE
+========================= -->
 
-        <h2>QUICK BOOKING</h2>
+<section class="catalogue-section">
 
-        <form>
+    <h1>PZ PERFORMANCE</h1>
 
-            <input type="text" placeholder="Full Name">
+    <h2>PARTS CATALOGUE</h2>
 
-            <br><br>
+    <input type="text" placeholder="Search parts by name, brand or model">
 
-            <input type="tel" placeholder="Phone Number">
+    <section class="parts-grid">
 
-            <br><br>
+        <article>
 
-            <input type="email" placeholder="Email Address">
+            <img src="bullbar.jpg" alt="Bullbar">
 
-            <br><br>
+            <h3>Toyota Land Cruiser Bull Bar</h3>
 
-            <input type="text" placeholder="Vehicle Make & Model">
+            <p>NOW : P8900</p>
 
-            <br><br>
+        </article>
 
-            <input type="date">
+        <article>
 
-            <br><br>
+            <img src="spoiler.jpg" alt="Spoiler">
 
-            <textarea placeholder="Additional Notes"></textarea>
+            <h3>MK7 Race Spoiler</h3>
 
-            <br><br>
+            <p>NOW : P8900</p>
 
-            <button type="submit">Submit Booking</button>
+        </article>
 
-        </form>
+        <article>
+
+            <img src="coilovers.jpg" alt="Coilovers">
+
+            <h3>Bilstein Coilovers</h3>
+
+            <p>NOW : P9900</p>
+
+        </article>
 
     </section>
 
-    <!-- =========================
-    TESTIMONIALS
-    ========================= -->
+</section>
 
-    <section>
+<!-- =========================
+CLIENT REVIEWS
+========================= -->
 
-        <h2>CUSTOMER TESTIMONIALS</h2>
+<section class="review-section">
+
+    <h1>PZ PERFORMANCE</h1>
+
+    <h2>WHAT CLIENTS SAY</h2>
+
+    <article>
 
         <p>
-            “PZ Performance transformed my car completely.
-            Incredible service and attention to detail.”
+            “So happy to have found a garage
+            where I could find genuine parts.”
         </p>
 
-        <p>- James M.</p>
+        <h3>Jared Nepomuceno</h3>
+
+    </article>
+
+    <article>
+
+        <p>
+            “The staff really know their stuff.
+            I trust them with every repair.”
+        </p>
+
+        <h3>Nathaniel Gomez</h3>
+
+    </article>
+
+</section>
+
+<!-- =========================
+CONTACT / BOOKING SECTION
+========================= -->
+
+<section class="contact-banner">
+
+    <section class="overlay">
+
+        <!-- LEFT -->
+
+        <article class="contact-left">
+
+            <h2>CONTACT US</h2>
+
+            <h3>LOCATION</h3>
+
+            <p>
+                Industrial Park Road Unit 11,<br>
+                Gaborone, Botswana
+            </p>
+
+            <h3>EMAIL ADDRESS</h3>
+
+            <p>pzperformancee@gmail.com</p>
+
+            <h3>PHONE NUMBER</h3>
+
+            <p>+267 71 453 520</p>
+
+            <h3>WORKING HOURS</h3>
+
+            <p>
+                Mon - Fri : 8am - 6pm<br>
+                Saturday : 9am - 3pm
+            </p>
+
+        </article>
+
+        <!-- CENTER -->
+
+        <article class="contact-center">
+
+            <h1>PZ PERFORMANCE</h1>
+
+        </article>
+
+        <!-- RIGHT -->
+
+        <article class="contact-right">
+
+            <h2>BOOK AN APPOINTMENT NOW !</h2>
+
+            <form>
+
+                <label>FULL NAME</label><br>
+
+                <input type="text">
+
+                <br><br>
+
+                <label>PHONE NUMBER</label><br>
+
+                <input type="tel">
+
+                <br><br>
+
+                <label>EMAIL ADDRESS</label><br>
+
+                <input type="email">
+
+                <br><br>
+
+                <label>CAR MAKE AND MODEL</label><br>
+
+                <input type="text">
+
+                <br><br>
+
+                <label>SELECT APPOINTMENT TYPE</label><br>
+
+                <select>
+
+                    <option>Choose Service</option>
+
+                    <option>Engine Tuning</option>
+
+                    <option>Maintenance</option>
+
+                    <option>Suspension Upgrade</option>
+
+                </select>
+
+                <p>
+                    WE REPLY WITHIN 24 HRS !
+                </p>
+
+            </form>
+
+        </article>
 
     </section>
 
-    <!-- =========================
-    CONTACT INFORMATION
-    ========================= -->
+</section>
 
-    <section>
+<footer>
 
-        <h2>CONTACT US</h2>
+    <p>
+        © 2026 PZ PERFORMANCE
+    </p>
 
-        <p>Gaborone, Botswana</p>
-
-        <p>+267 71 453 520/ 75 047 290</p>
-
-        <p>pzperformancee@gmail.com</p>
-
-        <p>Mon - Sat : 8AM - 6PM</p>
-
-    </section>
-
-    <footer>
-
-        <p>© 2026 PZ PERFORMANCE</p>
-
-    </footer>
-    <!-- BOOTSTRAP JAVASCRIPT -->
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</footer>
 
 </body>
 
