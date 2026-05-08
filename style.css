@@ -3,7 +3,7 @@ GENERAL
 ========================= */
 
 body {
-
+    background-image: url("images/homepage.jpg");
     margin: 0;
 
     background-color: #D3D3D3;
