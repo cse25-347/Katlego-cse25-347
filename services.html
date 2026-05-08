@@ -1,33 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services – PZ Performance</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --red:#e01010; --dark:#0a0a0a; --mid:#161616; --card:#1c1c1c; --text:#d8d8d8; --white:#f5f5f5; --font-display:'Bebas Neue',sans-serif; --font-body:'Barlow',sans-serif; }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--dark);color:var(--text);font-family:var(--font-body);line-height:1.6;}
+
+  nav{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(10,10,10,.92);backdrop-filter:blur(8px);border-bottom:2px solid var(--red);display:flex;align-items:center;justify-content:space-between;padding:.8rem 2rem;}
+  nav a.logo{font-family:var(--font-display);font-size:1.7rem;color:var(--white);text-decoration:none;letter-spacing:2px;}
+  nav a.logo span{color:var(--red);}
+  nav ul{list-style:none;display:flex;gap:2rem;}
+  nav ul a{color:var(--text);text-decoration:none;font-weight:600;font-size:.85rem;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s;}
+  nav ul a:hover,nav ul a.active{color:var(--red);}
+
+  /* PAGE HERO */
+  .page-hero{padding:9rem 2rem 4rem;max-width:1100px;margin:0 auto;}
+  .section-label{font-size:.7rem;letter-spacing:5px;text-transform:uppercase;color:var(--red);margin-bottom:.5rem;}
+  h1{font-family:var(--font-display);font-size:clamp(3rem,8vw,6rem);color:var(--white);line-height:.95;margin-bottom:1rem;}
+  h1 span{color:var(--red);}
+  .divider{width:60px;height:3px;background:var(--red);margin:1rem 0 2rem;}
+
+  /* SERVICE ROWS */
+  section{padding:3rem 2rem;max-width:1100px;margin:0 auto;}
+  .service-row{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;margin-bottom:4rem;background:var(--card);border-top:3px solid var(--red);padding:2.5rem;}
+  .service-row:nth-child(even){direction:rtl;}
+  .service-row > *{direction:ltr;}
+  .service-row img{width:100%;height:220px;object-fit:cover;}
+  /*  PERSONALISE: Replace image src with real workshop/service photos */
+  .service-row h2{font-family:var(--font-display);font-size:2.2rem;color:var(--white);margin-bottom:.5rem;}
+  .service-row p{font-size:.95rem;color:#aaa;margin-bottom:1rem;}
+  .tag{display:inline-block;background:var(--red);color:var(--white);font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;padding:.3rem .7rem;margin:.2rem .2rem 0 0;}
+
+  /* HOURS BAND */
+  .hours{background:var(--mid);border-top:2px solid #222;border-bottom:2px solid #222;padding:3rem 2rem;text-align:center;margin:2rem 0;}
+  .hours h2{font-family:var(--font-display);color:var(--white);font-size:2.5rem;margin-bottom:1.5rem;}
+  .hours-grid{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;}
+  .hours-card{text-align:center;}
+  .hours-card strong{font-family:var(--font-display);font-size:1.8rem;color:var(--red);display:block;}
+  .hours-card span{font-size:.85rem;color:#aaa;text-transform:uppercase;letter-spacing:1px;}
+
+  .btn{display:inline-block;background:var(--red);color:var(--white);padding:.85rem 2.2rem;text-decoration:none;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;font-size:.85rem;transition:background .2s,transform .15s;}
+  .btn:hover{background:#ff2020;transform:translateY(-2px);}
+
+  footer{background:var(--mid);border-top:2px solid #222;padding:2.5rem 2rem;text-align:center;}
+  footer a.logo{font-family:var(--font-display);font-size:1.4rem;color:var(--white);text-decoration:none;}
+  footer a.logo span{color:var(--red);}
+  footer p{color:#555;font-size:.8rem;margin-top:.5rem;}
+
+  @media(max-width:640px){.service-row{grid-template-columns:1fr;}.service-row:nth-child(even){direction:ltr;}.hours-grid{gap:1.5rem;}nav ul{gap:1rem;}nav ul a{font-size:.7rem;}}
+</style>
 </head>
 <body>
-    <header>
-        <h1>Services</h1>
-        <nav>
-            <a href="index.html">Home</a> | 
-            <a href="about.html">About</a> | 
-            <a href="contact.html">Contact</a> | 
-            <a href="services.html">Services</a> | 
-            <a href="parts catalogue.html">Parts Catalogue</a> | 
-            <a href="shop.html">Shop</a> | 
-            <a href="online booking.html">Online Booking</a>
-        </nav>
-    </header>
 
-    <main>
-        <p>Welcome to our services page!</p>
-        <!-- Add your services content here -->
-    </main>
+<nav>
+  <a href="index.html" class="logo">PZ<span>Performance</span></a>
+  <ul>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="parts.html">Parts</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
-    <footer>
-        <p>&copy; 2026 PZ PERFORMANCE</p>
-    </footer>
+<header class="page-hero">
+  <p class="section-label">What We Do</p>
+  <h1>Fueled by <span>Skill,</span><br>Driven by Passion</h1>
+  <hr class="divider">
+  <p>Every service we offer is engineered to keep your machine at its absolute peak — because mediocre just doesn't do 0–100 fast enough.</p>
+</header>
+
+<section>
+
+  <!-- SERVICE 1 -->
+  <!--  PERSONALISE: Replace all placeholder image URLs with real workshop photos -->
+  <article class="service-row">
+    <img src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=600" alt="Maintenance">
+    <aside>
+      <h2>Maintenance</h2>
+      <p>Regular checkups to keep your high-performance build healthy and reliable. Performance without maintenance is just a ticking time bomb — and not the cool kind.</p>
+      <p>We cover oil changes, brake inspections, fluid flushes, filter replacements, and full vehicle health scans.</p>
+      <span class="tag">Oil Change</span><span class="tag">Brake Service</span><span class="tag">Fluid Flush</span><span class="tag">Diagnostics</span>
+    </aside>
+  </article>
+
+  <!-- SERVICE 2 -->
+  <article class="service-row">
+    <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=600" alt="Performance Tuning">
+    <aside>
+      <h2>Performance Tuning</h2>
+      <p>ECU remaps, dyno runs, turbo setups, and full calibrations. We squeeze every horse out of your engine — responsibly. (The road isn't a racetrack… but we can pretend.)</p>
+      <p>Our technicians use industry-leading software to ensure power gains are safe, reliable, and matched to your goals.</p>
+      <span class="tag">ECU Remap</span><span class="tag">Dyno Tune</span><span class="tag">Turbo Setup</span><span class="tag">Intercoolers</span>
+    </aside>
+  </article>
+
+  <!-- SERVICE 3 -->
+  <article class="service-row">
+    <img src="https://images.unsplash.com/photo-1547744152-14d985cb937f?w=600" alt="Parts & Accessories">
+    <aside>
+      <h2>Parts & Accessories</h2>
+      <p>Body kits, coilovers, wheels, air intakes, exhaust systems — if it bolts on and looks mean, we've got it. Look fast even when you're parked at the mall.</p>
+      <!--  PERSONALISE: Add or remove tags to match your actual inventory -->
+      <span class="tag">Body Kits</span><span class="tag">Coilovers</span><span class="tag">Alloy Wheels</span><span class="tag">Cold Air Intake</span><span class="tag">Exhausts</span>
+    </aside>
+  </article>
+
+</section>
+
+<!-- WORKING HOURS -->
+<aside class="hours">
+  <h2>Pit Lane Hours</h2>
+  <figure class="hours-grid">
+    <article class="hours-card">
+      <strong>Mon – Fri</strong>
+      <span>8:00 AM – 6:00 PM</span>
+    </article>
+    <article class="hours-card">
+      <strong>Saturday</strong>
+      <span>9:00 AM – 3:00 PM</span>
+    </article>
+    <article class="hours-card">
+      <strong>Sunday</strong>
+      <!--😄 Car pun baked in -->
+      <span>Off to the track 🏁</span>
+    </article>
+  </figure>
+</aside>
+
+<section style="text-align:center;padding:3rem 2rem;">
+  <h2 style="font-family:var(--font-display);color:var(--white);font-size:2.5rem;margin-bottom:1rem;">Ready to Upgrade?</h2>
+  <p style="max-width:460px;margin:0 auto 2rem;">Booking takes 2 minutes. Your car will thank you — probably with a roar.</p>
+  <a href="contact.html" class="btn">Book an Appointment</a>
+</section>
+
+<footer>
+  <a href="index.html" class="logo">PZ<span>Performance</span></a>
+  <p>© 2026 PZ Performance · Industrial Park Rd, Unit 11, Gaborone · pzperformancee@gmail.com</p>
+  <p style="margin-top:.3rem;color:#444;font-style:italic;">Life's too short to drive boring cars.</p>
+</footer>
+
 </body>
 </html>
-
-
