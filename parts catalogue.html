@@ -13,6 +13,7 @@
 <nav>
 <a href="index.html" class="logo">PZ<span>Performance</span></a>
   <ul>
+    <li><a href="index.html">Home</a></li> 
     <li><a href="services.html">Services</a></li>
     <li><a href="parts catalogue.html" class="active">Parts</a></li>
     <li><a href="about.html">About</a></li>
@@ -30,18 +31,14 @@
 <!-- CATEGORY FILTER BUTTONS -->
 <!-- PERSONALISE: Add/remove filter categories to match your actual inventory -->
 <nav class="filter-bar">
-  <button class="filter-btn active">All Parts</button>
+  
   <button class="filter-btn">Engine Parts</button>
-  <button class="filter-btn">Suspension</button>
-  <button class="filter-btn">Exhaust</button>
-  <button class="filter-btn">Wheels & Rims</button>
   <button class="filter-btn">Exterior</button>
   <button class="filter-btn">Accessories</button>
 </nav>
 
-<!-- PRODUCT GRID -->
-<!--  PERSONALISE: Update products, prices, images, and categories below -->
 <main class="products">
+
 
   <article class="product-card">
     <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400" alt="Bull Bar">
@@ -102,11 +99,9 @@
     </section>
   </article>
 
-  <!--  PERSONALISE: Duplicate the card template above to add more products -->
-
+ 
 </main>
 
-<!-- CART SUMMARY (static demo) -->
 <section class="cart-band">
   <h2>Sample Cart</h2>
   <article class="cart-line"><span>General Service Kit</span><span>P300.00</span></article>
@@ -127,7 +122,6 @@
   <p style="margin-top:.3rem;color:#444;font-style:italic;">Life's too short to drive boring cars.</p>
 </footer>
 
-<!-- Filter button toggle (no frameworks needed) -->
 <script>
   document.querySelectorAll('.filter-btn').forEach(btn=>{
     btn.addEventListener('click',()=>{
