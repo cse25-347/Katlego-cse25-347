@@ -22,8 +22,10 @@
 html { scroll-behavior: smooth; }
 
 body {
-  "background- transparent"
-  background:  var(--dark);
+    background:      linear-gradient(120deg, rgba(26,26,30,0.92) 50%, rgba(204,16,16,0.12)),
+                   url('images/contact us index.jpg') center / cover no-repeat;
+  background-attachment: fixed;
+  
   color:       var(--text);
   font-family: var(--font-body);
   font-size:   1rem;
@@ -298,7 +300,7 @@ section.content {
 
 /* PERSONALISE: swap image src with real workshop photos */
 .service-row img {
-  images/homepage png
+  src: url('images/homepage.png');
   width:      100%;
   height:     220px;
   object-fit: cover;
