@@ -22,7 +22,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  "background-image:url(images/Media.jpg);"
+  "background-image:url(images/M3.jpg);"
   background:  var(--dark);
   color:       var(--text);
   font-family: var(--font-body);
