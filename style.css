@@ -552,14 +552,99 @@ section.content {
 
 /* PERSONALISE: swap the about-hero background URL with a real photo */
 .about-hero {
-  min-height:      60vh;
-  display:         flex;
-  flex-direction:  column;
-  justify-content: center;
-  align-items:     flex-start;
-  padding:         8rem 2rem 4rem;
-  background:      linear-gradient(to right, rgba(26,26,30,0.96) 50%, rgba(26,26,30,0.5)),
-                   url('images/Media.jpg') center / cover no-repeat;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  padding-left: 7%;
+  color: white;
+}
+
+/* Background Image Layer */
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(to right,
+    rgba(0,0,0,0.75) 30%,
+    rgba(0,0,0,0.35)),
+    url('images/Media.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transform: scale(1.1);
+  animation: slowZoom 20s ease-in-out infinite alternate;
+
+  z-index: -2;
+}
+
+/* Dark overlay for cinematic look */
+.about-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.15)
+  );
+
+  z-index: -1;
+}
+
+/* Hero Text */
+.hero-content {
+  max-width: 650px;
+}
+
+.hero-content h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #d3d3d3;
+  max-width: 550px;
+}
+
+/* Slow cinematic zoom animation */
+@keyframes slowZoom {
+  from {
+    transform: scale(1.1);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+
+  .about-hero {
+    padding: 2rem;
+    height: 90vh;
+  }
+
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
 }
 
 .about-hero .inner {
@@ -642,7 +727,7 @@ section.content {
   color:          var(--silver);
 }
 
-/* PERSONALISE: update stat numbers to real figures */
+
 
 .values {
   max-width: 1100px;
