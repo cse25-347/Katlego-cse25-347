@@ -1,3 +1,10 @@
+/* ============================================================
+   PZ PERFORMANCE — SHARED STYLESHEET
+   Fonts: Bebas Neue (display) + Poppins (body)
+   Colors: Carbon grey-silver palette with red accents
+   ============================================================ */
+
+/* ── TOKENS ── */
 :root {
   --red:          #cc1010;
   --dark:         #1a1a1e;        /* carbon base */
@@ -12,7 +19,7 @@
   --font-body:    'Poppins', sans-serif;
 }
 
-
+/* ── RESET ── */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -22,24 +29,21 @@
 html { scroll-behavior: smooth; }
 
 body {
-    background:      linear-gradient(120deg, rgba(26,26,30,0.92) 50%, rgba(204,16,16,0.12)),
-                   url('images/contact us index.jpg') center / cover no-repeat;
-  background-attachment: fixed;
-  
+  background:  var(--dark);
   color:       var(--text);
   font-family: var(--font-body);
   font-size:   1rem;
   line-height: 1.7;
 }
 
-
+/* ── NAV ── */
 nav {
   position:        fixed;
   top:             0;
   left:            0;
   width:           100%;
   z-index:         100;
-  background:      rgba(26, 26, 30, 0.50);
+  background:      rgba(26, 26, 30, 0.94);
   backdrop-filter: blur(10px);
   border-bottom:   2px solid var(--red);
   display:         flex;
@@ -78,8 +82,9 @@ nav ul a {
 nav ul a:hover,
 nav ul a.active { color: var(--red); }
 
+/* ── SHARED TYPOGRAPHY ── */
 .section-label {
-  font-family:    babas neue(--font-body);
+  font-family:    var(--font-body);
   font-size:      0.65rem;
   font-weight:    600;
   letter-spacing: 5px;
@@ -89,7 +94,7 @@ nav ul a.active { color: var(--red); }
 }
 
 h1, h2, h3 {
-  font-family: babas neue(--font-display);
+  font-family: var(--font-display);
   color:       var(--white);
   line-height: 0.95;
 }
@@ -99,7 +104,7 @@ h2      { font-size: clamp(2rem, 4vw, 3rem); }
 h3      { font-size: 1.6rem; margin-bottom: 0.5rem; }
 h1 span { color: var(--red); }
 
-
+/* Body text — Poppins for all descriptive/paragraph content */
 p, li, blockquote, td, label, input, select, textarea, small {
   font-family: var(--font-body);
 }
@@ -112,7 +117,7 @@ p, li, blockquote, td, label, input, select, textarea, small {
   border:     none;
 }
 
-
+/* ── BUTTONS ── */
 .btn {
   display:         inline-block;
   background:      var(--red);
@@ -154,7 +159,7 @@ p, li, blockquote, td, label, input, select, textarea, small {
 
 .btn-white:hover { background: #d4d8e2; }
 
-
+/* ── FOOTER ── */
 footer {
   background:  var(--mid);
   border-top:  2px solid var(--border);
@@ -184,15 +189,16 @@ footer p.tagline {
   margin-top: 0.3rem;
 }
 
+/* ── PAGE HERO (inner pages) ── */
 .page-hero {
   padding:   9rem 2rem 4rem;
   max-width: 1100px;
   margin:    0 auto;
 }
 
-
+/* ── CARDS ── */
 .card {
-  background:  rgba(26, 26, 30, 0.50);
+  background:  var(--card);
   border-top:  3px solid var(--red);
   padding:     2rem;
   position:    relative;
@@ -217,7 +223,7 @@ footer p.tagline {
   line-height: 1;
 }
 
-
+/* ── GRID HELPERS ── */
 .grid-3 {
   display:               grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -225,9 +231,9 @@ footer p.tagline {
   margin-top:            2.5rem;
 }
 
-
+/* ── BAND ── */
 .band {
-  background: rgba(26,26,30,0.5);
+  background: var(--mid);
   border-top: 2px solid var(--border);
   border-bottom: 2px solid var(--border);
   padding:    3rem 2rem;
@@ -250,6 +256,7 @@ footer p.tagline {
   margin-top:  0.4rem;
 }
 
+/* ── TESTIMONIALS ── */
 .testi-grid {
   display:               grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -258,7 +265,7 @@ footer p.tagline {
 }
 
 .testi {
-  background:  rgba(26, 26, 30, 0.50);
+  background:  var(--card);
   padding:     1.5rem;
   border-left: 3px solid var(--red);
 }
@@ -279,13 +286,16 @@ footer p.tagline {
   color:          var(--red);
 }
 
-
+/* ── SECTION WRAPPER ── */
 section.content {
   padding:   5rem 2rem;
   max-width: 1100px;
   margin:    0 auto;
 }
 
+/* ============================================================
+   SERVICES PAGE
+   ============================================================ */
 
 .service-row {
   display:               grid;
@@ -293,14 +303,13 @@ section.content {
   gap:                   2rem;
   align-items:           center;
   margin-bottom:         4rem;
-  background:            rgba(26, 26, 30, 0.50);
+  background:            var(--card);
   border-top:            3px solid var(--red);
   padding:               2.5rem;
 }
 
-
+/* PERSONALISE: swap image src with real workshop photos */
 .service-row img {
-  src: url('images/homepage.png'); /*come back to fix this*/
   width:      100%;
   height:     220px;
   object-fit: cover;
@@ -321,7 +330,7 @@ section.content {
 
 .tag {
   display:        inline-block;
-  background:     rgba(26, 26, 30, 0.50);
+  background:     var(--border);
   color:          var(--text-light);
   font-family:    var(--font-body);
   font-size:      0.68rem;
@@ -334,7 +343,7 @@ section.content {
 }
 
 .hours-band {
-  background:    rgba(26,26,30,0.5);
+  background:    var(--mid);
   border-top:    2px solid var(--border);
   border-bottom: 2px solid var(--border);
   padding:       3rem 2rem;
@@ -392,6 +401,9 @@ section.content {
   color:         var(--text);
 }
 
+/* ============================================================
+   PARTS PAGE
+   ============================================================ */
 
 .filter-bar {
   max-width:  1100px;
@@ -403,7 +415,7 @@ section.content {
 }
 
 .filter-btn {
-  background:     rgba(26,26,30,0.5);
+  background:     var(--card);
   border:         1px solid var(--border);
   color:          var(--text);
   padding:        0.45rem 1.1rem;
@@ -433,7 +445,7 @@ section.content {
 }
 
 .product-card {
-  background:  rgba(26, 26, 30, 0.50);
+  background:  var(--card);
   border-top:  3px solid transparent;
   transition:  border-color 0.2s, transform 0.2s;
   cursor:      pointer;
@@ -492,7 +504,7 @@ section.content {
 }
 
 .cart-band {
-  background:  rgba(26, 26, 30, 0.50);
+  background:  var(--mid);
   border-top:  2px solid var(--border);
   padding:     2.5rem 2rem;
   max-width:   1100px;
@@ -537,7 +549,7 @@ section.content {
 }
 
 .pay-pill {
-  background:     rgba(26, 26, 30, 0.50);
+  background:     var(--card);
   padding:        0.5rem 1.2rem;
   font-family:    var(--font-body);
   font-size:      0.72rem;
@@ -554,31 +566,16 @@ section.content {
 
 /* PERSONALISE: swap the about-hero background URL with a real photo */
 .about-hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-
-  display: flex;
-  align-items: center;
-  padding-left: 7%;
-  color: white;
-}
-
-
-.about-hero {
-  min-height: 60vh;
-  display: flex;
-  flex-direction: column;
+  min-height:      60vh;
+  display:         flex;
+  flex-direction:  column;
   justify-content: center;
-  align-items: flex-start;
-  padding: 8rem 2rem 4rem;
-
-  background:
-    linear-gradient(to right, rgba(26,26,30,0.96) 50%, rgba(26,26,30,0.5)),
-    url('images/Media.jpg') center / cover no-repeat;
-
-  background-attachment: fixed;
+  align-items:     flex-start;
+  padding:         8rem 2rem 4rem;
+  background:      linear-gradient(to right, rgba(26,26,30,0.96) 50%, rgba(26,26,30,0.5)),
+                   url('https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=1400') center / cover no-repeat;
 }
+
 .about-hero .inner {
   max-width: 1100px;
   margin:    0 auto;
@@ -603,7 +600,6 @@ section.content {
 
 /* PERSONALISE: swap with a real photo of your team or workshop */
 .story img {
-  
   width:      100%;
   height:     340px;
   object-fit: cover;
@@ -619,7 +615,7 @@ section.content {
 }
 
 .story p {
-  color:         rgba(26, 26, 30, 0.50);
+  color:         var(--text);
   margin-bottom: 1rem;
   font-size:     0.92rem;
 }
@@ -659,7 +655,7 @@ section.content {
   color:          var(--silver);
 }
 
-
+/* PERSONALISE: update stat numbers to real figures */
 
 .values {
   max-width: 1100px;
@@ -681,7 +677,7 @@ section.content {
 }
 
 .val-card {
-  background:  rgba(26, 26, 30, 0.50);
+  background:  var(--card);
   border-left: 3px solid var(--red);
   padding:     1.5rem;
 }
@@ -720,6 +716,9 @@ section.content {
   color:       rgba(255, 255, 255, 0.88);
 }
 
+/* ============================================================
+   CONTACT SECTION (used in contact.html AND index.html)
+   ============================================================ */
 
 .contact-wrap {
   max-width:             1100px;
@@ -792,7 +791,7 @@ section.content {
 }
 
 .form-col {
-  background: rgba(26, 26, 30, 0.50);
+  background: var(--card);
   border-top: 3px solid var(--red);
   padding:    2.5rem;
 }
@@ -880,12 +879,13 @@ textarea      { resize: vertical; min-height: 100px; }
 }
 
 .review-form {
-  background: rgba(26, 26, 30, 0.50);
+  background: var(--card);
   border-top: 3px solid var(--red);
   padding:    2rem;
   max-width:  560px;
 }
 
+/* ── CONTACT SECTION HEADING (when embedded in index.html) ── */
 .contact-section-header {
   max-width:  1100px;
   margin:     0 auto;
@@ -905,7 +905,11 @@ textarea      { resize: vertical; min-height: 100px; }
   font-size:   0.92rem;
 }
 
+/* ============================================================
+   HOME PAGE
+   ============================================================ */
 
+/* PERSONALISE: Replace the hero background URL below with your own car image */
 .hero {
   min-height:      100vh;
   display:         flex;
@@ -914,8 +918,7 @@ textarea      { resize: vertical; min-height: 100px; }
   align-items:     flex-start;
   padding:         7rem 2rem 4rem;
   background:      linear-gradient(120deg, rgba(26,26,30,0.92) 50%, rgba(204,16,16,0.12)),
-                   url('images/contact us index.jpg') center / cover no-repeat;
-  background-attachment: fixed;
+                   url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600') center / cover no-repeat;
 }
 
 .hero-tag {
@@ -934,6 +937,7 @@ textarea      { resize: vertical; min-height: 100px; }
   color:       var(--white);
   line-height: 0.95;
   max-width:   700px;
+  white-space: nowrap;
 }
 
 .hero h1 span { color: var(--red); }
@@ -946,7 +950,9 @@ textarea      { resize: vertical; min-height: 100px; }
   color:       var(--text-light);
 }
 
-
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
 
 @media (max-width: 760px) {
   .contact-wrap { grid-template-columns: 1fr; }
