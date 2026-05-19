@@ -39,7 +39,7 @@ nav {
   left:            0;
   width:           100%;
   z-index:         100;
-  background:      rgba(26, 26, 30, 0.94);
+  background:      rgba(26, 26, 30, 0.50);
   backdrop-filter: blur(10px);
   border-bottom:   2px solid var(--red);
   display:         flex;
@@ -192,7 +192,7 @@ footer p.tagline {
 
 
 .card {
-  background:  var(--card);
+  background:  rgba(26, 26, 30, 0.50);
   border-top:  3px solid var(--red);
   padding:     2rem;
   position:    relative;
@@ -227,7 +227,7 @@ footer p.tagline {
 
 
 .band {
-  background: var(--mid);
+  background: rgba(26,26,30,0.5);
   border-top: 2px solid var(--border);
   border-bottom: 2px solid var(--border);
   padding:    3rem 2rem;
@@ -258,7 +258,7 @@ footer p.tagline {
 }
 
 .testi {
-  background:  var(--card);
+  background:  rgba(26, 26, 30, 0.50);
   padding:     1.5rem;
   border-left: 3px solid var(--red);
 }
@@ -279,7 +279,7 @@ footer p.tagline {
   color:          var(--red);
 }
 
-/* ── SECTION WRAPPER ── */
+
 section.content {
   padding:   5rem 2rem;
   max-width: 1100px;
@@ -293,14 +293,14 @@ section.content {
   gap:                   2rem;
   align-items:           center;
   margin-bottom:         4rem;
-  background:            var(--card);
+  background:            rgba(26, 26, 30, 0.50);
   border-top:            3px solid var(--red);
   padding:               2.5rem;
 }
 
-/* PERSONALISE: swap image src with real workshop photos */
+
 .service-row img {
-  src: url('images/homepage.png');
+  src: url('images/homepage.png'); /*come back to fix this*/
   width:      100%;
   height:     220px;
   object-fit: cover;
@@ -321,7 +321,7 @@ section.content {
 
 .tag {
   display:        inline-block;
-  background:     var(--border);
+  background:     rgba(26, 26, 30, 0.50);
   color:          var(--text-light);
   font-family:    var(--font-body);
   font-size:      0.68rem;
@@ -334,7 +334,7 @@ section.content {
 }
 
 .hours-band {
-  background:    var(--mid);
+  background:    rgba(26,26,30,0.5);
   border-top:    2px solid var(--border);
   border-bottom: 2px solid var(--border);
   padding:       3rem 2rem;
@@ -403,7 +403,7 @@ section.content {
 }
 
 .filter-btn {
-  background:     var(--card);
+  background:     rgba(26,26,30,0.5);
   border:         1px solid var(--border);
   color:          var(--text);
   padding:        0.45rem 1.1rem;
@@ -433,7 +433,7 @@ section.content {
 }
 
 .product-card {
-  background:  var(--card);
+  background:  rgba(26, 26, 30, 0.50);
   border-top:  3px solid transparent;
   transition:  border-color 0.2s, transform 0.2s;
   cursor:      pointer;
@@ -492,7 +492,7 @@ section.content {
 }
 
 .cart-band {
-  background:  var(--mid);
+  background:  rgba(26, 26, 30, 0.50);
   border-top:  2px solid var(--border);
   padding:     2.5rem 2rem;
   max-width:   1100px;
@@ -537,7 +537,7 @@ section.content {
 }
 
 .pay-pill {
-  background:     var(--card);
+  background:     rgba(26, 26, 30, 0.50);
   padding:        0.5rem 1.2rem;
   font-family:    var(--font-body);
   font-size:      0.72rem;
@@ -619,7 +619,7 @@ section.content {
 }
 
 .story p {
-  color:         var(--text);
+  color:         rgba(26, 26, 30, 0.50);
   margin-bottom: 1rem;
   font-size:     0.92rem;
 }
@@ -681,7 +681,7 @@ section.content {
 }
 
 .val-card {
-  background:  var(--card);
+  background:  rgba(26, 26, 30, 0.50);
   border-left: 3px solid var(--red);
   padding:     1.5rem;
 }
@@ -792,7 +792,7 @@ section.content {
 }
 
 .form-col {
-  background: var(--card);
+  background: rgba(26, 26, 30, 0.50);
   border-top: 3px solid var(--red);
   padding:    2.5rem;
 }
@@ -880,7 +880,7 @@ textarea      { resize: vertical; min-height: 100px; }
 }
 
 .review-form {
-  background: var(--card);
+  background: rgba(26, 26, 30, 0.50);
   border-top: 3px solid var(--red);
   padding:    2rem;
   max-width:  560px;
