@@ -22,7 +22,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-    background:      linear-gradient(120deg, rgba(26,26,30,0.92) 50%, rgba(204,16,16,0.12)),
+    background:      linear-gradient(120deg, rgba(26,26,30,0.50) 50%, rgba(204,16,16,0.50)),
                    url('images/contact us index.jpg') center / cover no-repeat;
   background-attachment: fixed;
   
