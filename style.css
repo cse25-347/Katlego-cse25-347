@@ -963,3 +963,365 @@ textarea      { resize: vertical; min-height: 100px; }
   .hours-grid           { gap: 1.5rem; }
   .service-row          { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   SHOP PAGE
+   ============================================================ */
+ 
+/* Two-column layout: product grid left, sticky checkout right */
+.shop-wrap {
+  max-width:             1200px;
+  margin:                0 auto;
+  padding:               0 2rem 5rem;
+  display:               grid;
+  grid-template-columns: 1fr 360px;
+  gap:                   2.5rem;
+  align-items:           start;
+}
+ 
+/* ── Product listing column ── */
+.shop-products h2 {
+  font-family:   var(--font-display);
+  font-size:     2rem;
+  color:         var(--white);
+  margin-bottom: 1.5rem;
+}
+ 
+.shop-grid {
+  display:               grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap:                   1.2rem;
+}
+ 
+.shop-card {
+  background:  rgba(26, 26, 30, 0.50);
+  border-top:  3px solid transparent;
+  transition:  border-color 0.2s, transform 0.2s;
+}
+ 
+.shop-card:hover {
+  border-color: var(--red);
+  transform:    translateY(-4px);
+}
+ 
+.shop-card img {
+  width:      100%;
+  height:     155px;
+  object-fit: cover;
+  display:    block;
+}
+ 
+.shop-card-info { padding: 0.9rem; }
+ 
+.shop-card-info small {
+  font-family:    var(--font-body);
+  font-size:      0.62rem;
+  font-weight:    600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color:          var(--red);
+}
+ 
+.shop-card-info h3 {
+  font-family:   var(--font-display);
+  font-size:     1.1rem;
+  color:         var(--white);
+  margin:        0.2rem 0 0.3rem;
+  line-height:   1.2;
+}
+ 
+.shop-card-info p {
+  font-family:   var(--font-body);
+  font-size:     0.75rem;
+  color:         var(--silver);
+  margin-bottom: 0.7rem;
+  line-height:   1.5;
+}
+ 
+.shop-price-row {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+}
+ 
+.shop-price-old {
+  font-family:     var(--font-body);
+  text-decoration: line-through;
+  color:           var(--silver);
+  font-size:       0.75rem;
+}
+ 
+.shop-price-new {
+  font-family:  var(--font-body);
+  color:        var(--red);
+  font-weight:  700;
+  font-size:    0.95rem;
+}
+ 
+/* Add to cart button on each product card */
+.add-to-cart {
+  display:        block;
+  width:          100%;
+  margin-top:     0.7rem;
+  background:     rgba(26, 26, 30, 0.50);
+  color:          var(--text-light);
+  border:         1px solid var(--silver);
+  padding:        0.45rem;
+  font-family:    var(--font-body);
+  font-size:      0.7rem;
+  font-weight:    600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor:         pointer;
+  transition:     background 0.2s, color 0.2s, border-color 0.2s;
+}
+ 
+.add-to-cart:hover {
+  background:   var(--red);
+  color:        var(--white);
+  border-color: var(--red);
+}
+ 
+/* ── Checkout / cart column ── */
+.checkout-col {
+  position:   sticky;
+  top:        90px;
+  background: rgba(26, 26, 30, 0.50);
+  border-top: 3px solid var(--red);
+  padding:    2rem;
+}
+ 
+.checkout-col h2 {
+  font-family:   var(--font-display);
+  font-size:     2rem;
+  color:         var(--white);
+  margin-bottom: 1.2rem;
+}
+ 
+/* Individual cart item row */
+.cart-item {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+  padding:         0.6rem 0;
+  border-bottom:   1px solid var(--border);
+  font-family:     var(--font-body);
+  font-size:       0.82rem;
+  gap:             0.5rem;
+}
+ 
+.cart-item-name {
+  font-family: var(--font-body);
+  color:       var(--text-light);
+  flex:        1;
+}
+ 
+.cart-item-qty {
+  font-family: var(--font-body);
+  color:       var(--silver);
+  font-size:   0.75rem;
+  white-space: nowrap;
+}
+ 
+.cart-item-price {
+  font-family: var(--font-body);
+  color:       var(--white);
+  font-weight: 600;
+  white-space: nowrap;
+}
+ 
+.cart-item-remove {
+  background:  none;
+  border:      none;
+  color:       var(--silver);
+  cursor:      pointer;
+  font-family: var(--font-body);
+  font-size:   0.8rem;
+  padding:     0 0.3rem;
+  transition:  color 0.2s;
+}
+ 
+.cart-item-remove:hover { color: var(--red); }
+ 
+/* Empty state shown when cart has no items */
+.cart-empty {
+  font-family:   var(--font-body);
+  font-size:     0.85rem;
+  color:         var(--silver);
+  font-style:    italic;
+  text-align:    center;
+  padding:       1.5rem 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1rem;
+}
+ 
+/* Totals rows */
+.cart-subtotal,
+.cart-vat {
+  display:         flex;
+  justify-content: space-between;
+  font-family:     var(--font-body);
+  font-size:       0.82rem;
+  color:           var(--silver);
+  padding:         0.3rem 0;
+}
+ 
+.cart-total-row {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+  padding:         0.8rem 0 1.2rem;
+  border-top:      2px solid var(--border);
+  margin-top:      0.4rem;
+}
+ 
+.cart-total-label {
+  font-family:    var(--font-display);
+  font-size:      1.4rem;
+  color:          var(--white);
+  letter-spacing: 1px;
+}
+ 
+.cart-total-amount {
+  font-family: var(--font-display);
+  font-size:   1.8rem;
+  color:       var(--red);
+}
+ 
+/* ── Payment method selector ── */
+.payment-section  { margin-bottom: 1.5rem; }
+ 
+.payment-label {
+  display:        block;
+  font-family:    var(--font-body);
+  font-size:      0.7rem;
+  font-weight:    700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color:          var(--silver);
+  margin-bottom:  0.8rem;
+}
+ 
+.payment-options {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   0.6rem;
+}
+ 
+/* Each selectable payment tile */
+.pay-option {
+  background:     var(--mid);
+  border:         2px solid var(--border);
+  color:          var(--text);
+  padding:        0.8rem 0.5rem;
+  text-align:     center;
+  cursor:         pointer;
+  font-family:    var(--font-body);
+  font-size:      0.7rem;
+  font-weight:    600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition:     border-color 0.2s, color 0.2s, background 0.2s;
+  line-height:    1.4;
+}
+ 
+.pay-option:hover {
+  border-color: var(--silver);
+  color:        var(--white);
+}
+ 
+.pay-option.selected {
+  border-color: var(--red);
+  color:        var(--white);
+  background:   rgba(204, 16, 16, 0.12);
+}
+ 
+/* Icon / label above payment option name */
+.pay-icon {
+  display:       block;
+  font-family:   var(--font-display);
+  font-size:     1.1rem;
+  color:         var(--red);
+  margin-bottom: 0.2rem;
+  letter-spacing: 1px;
+}
+ 
+/* Extra fields revealed when card payment is selected */
+.card-fields {
+  margin-top: 1rem;
+  display:    none;
+}
+ 
+.card-fields.visible { display: block; }
+ 
+/* Extra field revealed when pay on delivery is selected */
+.delivery-fields {
+  margin-top: 1rem;
+  display:    none;
+}
+ 
+.delivery-fields.visible { display: block; }
+ 
+/* Main checkout button */
+.btn-checkout {
+  display:        block;
+  width:          100%;
+  background:     var(--red);
+  color:          var(--white);
+  border:         none;
+  padding:        1rem;
+  font-family:    var(--font-body);
+  font-weight:    700;
+  font-size:      0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor:         pointer;
+  transition:     background 0.2s, transform 0.15s;
+  margin-top:     0.5rem;
+}
+ 
+.btn-checkout:hover {
+  background: #e01515;
+  transform:  translateY(-2px);
+}
+ 
+.btn-checkout:disabled {
+  background: var(--border);
+  color:      var(--silver);
+  cursor:     not-allowed;
+  transform:  none;
+}
+ 
+/* Order confirmed message shown after successful checkout */
+.order-confirmed {
+  display:    none;
+  text-align: center;
+  padding:    2rem 1rem;
+  border-top: 2px solid var(--border);
+  margin-top: 1rem;
+}
+ 
+.order-confirmed h3 {
+  font-family:   var(--font-display);
+  font-size:     1.8rem;
+  color:         var(--white);
+  margin-bottom: 0.5rem;
+}
+ 
+.order-confirmed p {
+  font-family: var(--font-body);
+  font-size:   0.82rem;
+  color:       var(--silver);
+}
+ 
+.order-confirmed.visible { display: block; }
+ 
+/* ── Responsive shop ── */
+@media (max-width: 900px) {
+  .shop-wrap    { grid-template-columns: 1fr; }
+  .checkout-col { position: static; }
+}
+ 
+@media (max-width: 640px) {
+  .payment-options { grid-template-columns: 1fr 1fr; }
+}
