@@ -1,50 +1,449 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop – PZ Performance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+  <!-- SHOP PAGE BACKGROUND                                          -->
+  <!-- PERSONALISE: replace the image path with your own photo.     -->
+  <!-- This overrides the body background only on this page without -->
+  <!-- touching the shared style.css file.                          -->
+  <style>
+    body {
+      background:
+        linear-gradient(120deg, rgba(26,26,30,0.92) 50%, rgba(204,16,16,0.10)),
+        url('images/shop-bg.jpg') center / cover no-repeat fixed;
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-     <nav>
-            <a href="index.html">Home</a> | 
-            <a href="about.html">About</a> | 
-            <a href="contact.html">Contact</a> | 
-            <a href="services.html">Services</a> | 
-            <a href="parts catalogue.html">Parts Catalogue</a> | 
-            <a href="shop.html">Shop</a> | 
-            <a href="online booking.html">Online Booking</a>
-        </nav>
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html" class="logo">PZ<span>Performance</span></a>
+    <ul>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="parts.html">Parts</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="shop.html" class="active">Shop</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-    <h1>SHOPPING CART</h1>
+  <!-- PAGE HERO -->
+  <header class="page-hero">
+    <p class="section-label">PZ Performance Store</p>
+    <h1>The <span>Shop</span></h1>
+    <hr class="divider">
+    <!-- PERSONALISE: change the sub-headline if desired -->
+    <p>Pick your parts, add to cart, and check out. No waiting room required.</p>
+  </header>
 
-</header>
+  <!-- SHOP: products left, checkout right -->
+  <main class="shop-wrap">
 
-<section>
+    <!-- ── PRODUCT GRID ── -->
+    <section class="shop-products">
+      <h2>Available Parts</h2>
 
-    <h2>Your Items</h2>
+      <!-- PERSONALISE: duplicate any shop-card article below to add more products.  -->
+      <!-- Update the img src, category, name, description, and prices accordingly.  -->
+      <article class="shop-grid">
 
-    <p>Turbo Kit - P12 500</p>
+        <figure class="shop-card">
+          <img src="images/bullbar.jpg" alt="Toyota Land Cruiser Titanium Bull Bar">
+          <section class="shop-card-info">
+            <small>Exterior</small>
+            <h3>Toyota LC Titanium Bull Bar</h3>
+            <p>Heavy-duty titanium finish. Bolt-on fitment for Land Cruiser models.</p>
+            <section class="shop-price-row">
+              <span class="shop-price-old">P9 500</span>
+              <span class="shop-price-new">P8 900</span>
+            </section>
+            <button class="add-to-cart"
+              data-name="Toyota LC Titanium Bull Bar"
+              data-price="8900">Add to Cart</button>
+          </section>
+        </figure>
 
-    <p>Performance Exhaust - P4 300</p>
+        <figure class="shop-card">
+          <img src="images/spoiler.jpg" alt="Oettinger MK7 Race Spoiler">
+          <section class="shop-card-info">
+            <small>Exterior</small>
+            <h3>Oettinger MK7 Race Spoiler</h3>
+            <p>OEM-quality ABS spoiler. Direct fit for VW Golf MK7 variants.</p>
+            <section class="shop-price-row">
+              <span class="shop-price-old">P9 500</span>
+              <span class="shop-price-new">P8 900</span>
+            </section>
+            <button class="add-to-cart"
+              data-name="Oettinger MK7 Race Spoiler"
+              data-price="8900">Add to Cart</button>
+          </section>
+        </figure>
 
-    <h3>Total : P16 800</h3>
+        <figure class="shop-card">
+          <img src="images/coilovers.jpg" alt="Bilstein EVO T1 Coilovers">
+          <section class="shop-card-info">
+            <small>Suspension</small>
+            <h3>Bilstein EVO T1 Coilovers</h3>
+            <p>Adjustable damping, sport lowering springs. Built to last.</p>
+            <section class="shop-price-row">
+              <span class="shop-price-old">P10 600</span>
+              <span class="shop-price-new">P9 900</span>
+            </section>
+            <button class="add-to-cart"
+              data-name="Bilstein EVO T1 Coilovers"
+              data-price="9900">Add to Cart</button>
+          </section>
+        </figure>
 
-    <button>Proceed To Checkout</button>
+        <figure class="shop-card">
+          <img src="images/intake.jpg" alt="VW Golf 6 GTI Cold Air Intake">
+          <section class="shop-card-info">
+            <small>Engine Parts</small>
+            <h3>VW Golf 6 GTI Cold Air Intake</h3>
+            <p>Increases airflow for sharper throttle response and better sound.</p>
+            <section class="shop-price-row">
+              <span class="shop-price-old">P1 500</span>
+              <span class="shop-price-new">P1 250</span>
+            </section>
+            <button class="add-to-cart"
+              data-name="VW Golf 6 GTI Cold Air Intake"
+              data-price="1250">Add to Cart</button>
+          </section>
+        </figure>
 
-</section>
+        <figure class="shop-card">
+          <img src="images/pz-coilovers.jpg" alt="PZ Sport Coilovers">
+          <section class="shop-card-info">
+            <small>Suspension</small>
+            <h3>PZ Sport Coilovers</h3>
+            <p>Our in-house spec coilover kit. Tuned for Botswana roads.</p>
+            <section class="shop-price-row">
+              <span class="shop-price-new">P5 370</span>
+            </section>
+            <button class="add-to-cart"
+              data-name="PZ Sport Coilovers"
+              data-price="5370">Add to Cart</button>
+          </section>
+        </figure>
 
-<footer>
-    <p>© 2026 PZ PERFORMANCE</p>
-</footer>
+        <figure class="shop-card">
+          <img src="images/service-kit.jpg" alt="General Service Kit">
+          <section class="shop-card-info">
+            <small>Maintenance</small>
+            <h3>General Service Kit</h3>
+            <p>Oil filter, air filter, spark plugs and sump washer. All in one box.</p>
+            <section class="shop-price-row">
+              <span class="shop-price-new">P300</span>
+            </section>
+            <button class="add-to-cart"
+              data-name="General Service Kit"
+              data-price="300">Add to Cart</button>
+          </section>
+        </figure>
+
+      </article>
+    </section>
+
+    <!-- ── CHECKOUT SIDEBAR ── -->
+    <aside class="checkout-col">
+      <h2>Your Cart</h2>
+
+      <!-- Cart items are injected here by JS -->
+      <section class="cart-items" id="cart-items">
+        <p class="cart-empty" id="cart-empty">Your cart is empty. Go pick something fast.</p>
+      </section>
+
+      <!-- Totals -->
+      <article class="cart-subtotal">
+        <span>Subtotal</span>
+        <span id="subtotal">P0.00</span>
+      </article>
+      <article class="cart-vat">
+        <span>VAT (14.5%)</span>
+        <span id="vat-amt">P0.00</span>
+      </article>
+      <article class="cart-total-row">
+        <span class="cart-total-label">Total</span>
+        <span class="cart-total-amount" id="grand-total">P0.00</span>
+      </article>
+
+      <!-- Payment method selector -->
+      <section class="payment-section">
+        <span class="payment-label">Choose Payment Method</span>
+
+        <section class="payment-options">
+
+          <!-- PERSONALISE: add or remove payment tiles to match what you actually accept -->
+
+          <button class="pay-option" data-method="visa" onclick="selectPayment(this)">
+            <span class="pay-icon">VISA</span>
+            Credit / Debit Card
+          </button>
+
+          <button class="pay-option" data-method="mastercard" onclick="selectPayment(this)">
+            <span class="pay-icon">MC</span>
+            Mastercard
+          </button>
+
+          <button class="pay-option" data-method="cheque" onclick="selectPayment(this)">
+            <span class="pay-icon">CHQ</span>
+            Cheque
+          </button>
+
+          <button class="pay-option" data-method="delivery" onclick="selectPayment(this)">
+            <span class="pay-icon">COD</span>
+            Pay on Delivery
+          </button>
+
+          <button class="pay-option" data-method="eft" onclick="selectPayment(this)">
+            <span class="pay-icon">EFT</span>
+            Bank Transfer
+          </button>
+
+          <button class="pay-option" data-method="orange" onclick="selectPayment(this)">
+            <span class="pay-icon">ORM</span>
+            Orange Money
+          </button>
+
+        </section>
+
+        <!-- Card detail fields — shown when Visa or Mastercard is selected -->
+        <section class="card-fields" id="card-fields">
+          <label for="card-name">Name on Card</label>
+          <input type="text" id="card-name" placeholder="Kagiso Modise">
+
+          <label for="card-num">Card Number</label>
+          <input type="text" id="card-num" placeholder="**** **** **** ****" maxlength="19">
+
+          <label for="card-exp">Expiry</label>
+          <input type="text" id="card-exp" placeholder="MM / YY" maxlength="7">
+
+          <label for="card-cvv">CVV</label>
+          <input type="text" id="card-cvv" placeholder="***" maxlength="4">
+        </section>
+
+        <!-- Delivery address — shown when Pay on Delivery is selected -->
+        <section class="delivery-fields" id="delivery-fields">
+          <label for="del-name">Full Name</label>
+          <input type="text" id="del-name" placeholder="Kagiso Modise">
+
+          <label for="del-phone">Phone Number</label>
+          <input type="tel" id="del-phone" placeholder="+267 71 000 000">
+
+          <!-- PERSONALISE: update delivery address field label to match your coverage area -->
+          <label for="del-addr">Delivery Address</label>
+          <input type="text" id="del-addr" placeholder="Plot 123, Gaborone">
+        </section>
+
+        <!-- EFT / Bank Transfer details — shown when EFT is selected -->
+        <section class="card-fields" id="eft-fields">
+          <p style="font-size:0.82rem;color:var(--silver);margin-top:0.5rem;line-height:1.6;">
+            <!-- PERSONALISE: replace with your real bank account details -->
+            Transfer to:<br>
+            <strong style="color:var(--text-light);">Bank: FNB Botswana</strong><br>
+            <strong style="color:var(--text-light);">Account: 62012345678</strong><br>
+            <strong style="color:var(--text-light);">Branch Code: 285 267</strong><br>
+            Use your order reference as the payment reference.
+          </p>
+        </section>
+
+      </section>
+
+      <!-- Checkout action button -->
+      <button class="btn-checkout" id="checkout-btn" disabled onclick="placeOrder()">
+        Select a Payment Method
+      </button>
+
+      <!-- Order confirmed message -->
+      <article class="order-confirmed" id="order-confirmed">
+        <h3>Order Placed</h3>
+        <p>We will contact you within 24 hours to confirm your order and arrange collection or delivery.</p>
+      </article>
+
+    </aside>
+
+  </main>
+
+  <!-- FOOTER -->
+  <!-- PERSONALISE: update year, address, and email -->
+  <footer>
+    <a href="index.html" class="logo">PZ<span>Performance</span></a>
+    <p>2026 PZ Performance · Industrial Park Rd, Unit 11, Gaborone · pzperformancee@gmail.com</p>
+    <p class="tagline">Life is too short to drive boring cars.</p>
+  </footer>
+
+  <script>
+    /* ── CART STATE ── */
+    const cart = {};   /* { productName: { price, qty } } */
+    const VAT  = 0.145;
+
+    /* ── ADD TO CART ── */
+    document.querySelectorAll('.add-to-cart').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const name  = btn.dataset.name;
+        const price = parseFloat(btn.dataset.price);
+
+        if (cart[name]) {
+          cart[name].qty += 1;
+        } else {
+          cart[name] = { price, qty: 1 };
+        }
+
+        renderCart();
+        btn.textContent = 'Added';
+        setTimeout(() => { btn.textContent = 'Add to Cart'; }, 1000);
+      });
+    });
+
+    /* ── RENDER CART ── */
+    function renderCart() {
+      const container = document.getElementById('cart-items');
+      const empty     = document.getElementById('cart-empty');
+      const keys      = Object.keys(cart);
+
+      /* clear existing rows */
+      container.querySelectorAll('.cart-item').forEach(el => el.remove());
+
+      if (keys.length === 0) {
+        empty.style.display = 'block';
+        updateTotals(0);
+        return;
+      }
+
+      empty.style.display = 'none';
+      let subtotal = 0;
+
+      keys.forEach(name => {
+        const { price, qty } = cart[name];
+        const lineTotal = price * qty;
+        subtotal += lineTotal;
+
+        const row = document.createElement('article');
+        row.className = 'cart-item';
+        row.innerHTML =
+          '<span class="cart-item-name">' + name + '</span>' +
+          '<span class="cart-item-qty">x' + qty + '</span>' +
+          '<span class="cart-item-price">P' + lineTotal.toFixed(2) + '</span>' +
+          '<button class="cart-item-remove" onclick="removeItem(\'' + name + '\')">Remove</button>';
+
+        container.appendChild(row);
+      });
+
+      updateTotals(subtotal);
+    }
+
+    /* ── REMOVE ITEM ── */
+    function removeItem(name) {
+      delete cart[name];
+      renderCart();
+    }
+
+    /* ── UPDATE TOTALS ── */
+    function updateTotals(subtotal) {
+      const vatAmt = subtotal * VAT;
+      const grand  = subtotal + vatAmt;
+
+      document.getElementById('subtotal').textContent  = 'P' + subtotal.toFixed(2);
+      document.getElementById('vat-amt').textContent   = 'P' + vatAmt.toFixed(2);
+      document.getElementById('grand-total').textContent = 'P' + grand.toFixed(2);
+    }
+
+    /* ── PAYMENT SELECTION ── */
+    let selectedMethod = null;
+
+    function selectPayment(btn) {
+      document.querySelectorAll('.pay-option').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedMethod = btn.dataset.method;
+
+      /* hide all extra fields first */
+      document.getElementById('card-fields').classList.remove('visible');
+      document.getElementById('delivery-fields').classList.remove('visible');
+      document.getElementById('eft-fields').classList.remove('visible');
+
+      /* show relevant extra fields */
+      if (selectedMethod === 'visa' || selectedMethod === 'mastercard') {
+        document.getElementById('card-fields').classList.add('visible');
+      } else if (selectedMethod === 'delivery') {
+        document.getElementById('delivery-fields').classList.add('visible');
+      } else if (selectedMethod === 'eft') {
+        document.getElementById('eft-fields').classList.add('visible');
+      }
+
+      /* enable checkout button only if cart has items */
+      const checkoutBtn = document.getElementById('checkout-btn');
+      if (Object.keys(cart).length > 0) {
+        checkoutBtn.disabled = false;
+        checkoutBtn.textContent = 'Place Order';
+      }
+    }
+
+    /* re-check button state whenever cart changes */
+    function renderCart() {
+      const container = document.getElementById('cart-items');
+      const empty     = document.getElementById('cart-empty');
+      const keys      = Object.keys(cart);
+
+      container.querySelectorAll('.cart-item').forEach(el => el.remove());
+
+      const checkoutBtn = document.getElementById('checkout-btn');
+
+      if (keys.length === 0) {
+        empty.style.display = 'block';
+        updateTotals(0);
+        checkoutBtn.disabled = true;
+        checkoutBtn.textContent = 'Select a Payment Method';
+        return;
+      }
+
+      empty.style.display = 'none';
+      let subtotal = 0;
+
+      keys.forEach(name => {
+        const { price, qty } = cart[name];
+        const lineTotal = price * qty;
+        subtotal += lineTotal;
+
+        const row = document.createElement('article');
+        row.className = 'cart-item';
+        row.innerHTML =
+          '<span class="cart-item-name">' + name + '</span>' +
+          '<span class="cart-item-qty">x' + qty + '</span>' +
+          '<span class="cart-item-price">P' + lineTotal.toFixed(2) + '</span>' +
+          '<button class="cart-item-remove" onclick="removeItem(\'' + name + '\')">Remove</button>';
+
+        container.appendChild(row);
+      });
+
+      updateTotals(subtotal);
+
+      /* re-enable button if a method is already selected */
+      if (selectedMethod) {
+        checkoutBtn.disabled = false;
+        checkoutBtn.textContent = 'Place Order';
+      }
+    }
+
+    /* ── PLACE ORDER ── */
+    function placeOrder() {
+      if (Object.keys(cart).length === 0 || !selectedMethod) return;
+
+      /* PERSONALISE: replace this block with a real API call or form submission */
+      document.getElementById('checkout-btn').style.display = 'none';
+      document.getElementById('order-confirmed').classList.add('visible');
+
+      /* clear cart after order */
+      Object.keys(cart).forEach(k => delete cart[k]);
+      renderCart();
+    }
+  </script>
 
 </body>
 </html>
