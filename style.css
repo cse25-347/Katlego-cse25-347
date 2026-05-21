@@ -575,12 +575,6 @@ section.content {
   justify-content: center;
   align-items: flex-start;
   padding: 8rem 2rem 4rem;
-
-  background:
-    linear-gradient(to right, rgba(26,26,30,0.96) 50%, rgba(26,26,30,0.5)),
-    url('images/Media.jpg') center / cover no-repeat;
-
-  background-attachment: fixed;
 }
 .about-hero .inner {
   max-width: 1100px;
